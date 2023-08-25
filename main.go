@@ -3,14 +3,13 @@ package main
 import (
 	"fmt"
 	"math/rand"
+	"time"
 )
 
 const (
 	NumAnts       = 3
 	NumNodes      = 10
-	NumIterations = 1
-	// VehicleCapacity = 200
-
+	NumIterations = 10
 )
 
 type Node struct {
@@ -28,7 +27,7 @@ type Ant struct {
 
 func main() {
 	startNode := 0
-	// rand.Seed(time.Now().UnixNano())
+	rand.Seed(time.Now().UnixNano())
 	// Configuración de condiciones específicas para cada nodo
 	nodes := []Node{
 		{Demand: 0, Distance: []int{0, 10, 20, 30, 40, 50, 60, 70, 80, 90}},
@@ -37,60 +36,78 @@ func main() {
 		{Demand: 100, Distance: []int{30, 25, 10, 0, 15, 25, 35, 45, 55, 65}},
 		{Demand: 100, Distance: []int{40, 35, 20, 15, 0, 10, 20, 30, 40, 50}},
 		{Demand: 100, Distance: []int{50, 45, 30, 25, 10, 0, 10, 20, 30, 40}},
-		{Demand: 50, Distance: []int{60, 55, 40, 35, 20, 10, 0, 10, 20, 30}},
-		{Demand: 50, Distance: []int{70, 65, 50, 45, 30, 20, 10, 0, 10, 20}},
-		{Demand: 50, Distance: []int{80, 75, 60, 55, 40, 30, 20, 10, 0, 10}},
-		{Demand: 50, Distance: []int{90, 85, 70, 65, 50, 40, 30, 20, 10, 0}},
+		{Demand: 100, Distance: []int{60, 55, 40, 35, 20, 10, 0, 10, 20, 30}},
+		{Demand: 100, Distance: []int{70, 65, 50, 45, 30, 20, 10, 0, 10, 20}},
+		{Demand: 100, Distance: []int{80, 75, 60, 55, 40, 30, 20, 10, 0, 10}},
+		{Demand: 100, Distance: []int{90, 85, 70, 65, 50, 40, 30, 20, 10, 0}},
 	}
 	// Configuración de condiciones específicas para cada Vehiculo
 	ants := []Ant{
-		{Visited: make([]bool, NumNodes), CurrentNode: startNode, Route: []int{startNode}, Capacity: 100, RemainingCapacity: 100},
-		{Visited: make([]bool, NumNodes), CurrentNode: startNode, Route: []int{startNode}, Capacity: 50, RemainingCapacity: 50},
+		{Visited: make([]bool, NumNodes), CurrentNode: startNode, Route: []int{startNode}, Capacity: 300, RemainingCapacity: 300},
+		{Visited: make([]bool, NumNodes), CurrentNode: startNode, Route: []int{startNode}, Capacity: 300, RemainingCapacity: 300},
 		{Visited: make([]bool, NumNodes), CurrentNode: startNode, Route: []int{startNode}, Capacity: 300, RemainingCapacity: 300},
 	}
 
-	pheromones := make([][]float64, NumNodes)
-	for i := range pheromones {
-		pheromones[i] = make([]float64, NumNodes)
-		for j := range pheromones[i] {
-			pheromones[i][j] = 1.0
-		}
+	fmt.Println("--------Nodos---------")
+	for i, node := range nodes {
+		fmt.Println(i, " Demand:", node.Demand)
 	}
 
-	visitedNodes := make([]bool, NumNodes)
-
+	fmt.Println("--------Vihicle---------")
+	for i, ant := range ants {
+		fmt.Println(i+1, " Capacity:", ant.Capacity)
+	}
+	fmt.Println("------------------------------------------------------------")
 	for iteration := 0; iteration < NumIterations; iteration++ {
-		for step := 0; step < NumNodes-1; step++ {
-			for i := range ants {
-				ant := &ants[i]
-				if ant.RemainingCapacity <= 0 {
-					ant.Route = append(ant.Route, startNode)
-					continue
-				}
-				ant.CurrentNode = selectNextNode(ant, pheromones, nodes, visitedNodes)
-				if ant.CurrentNode == startNode {
-					ant.Route = append(ant.Route, startNode)
-				} else {
-					ant.Visited[ant.CurrentNode] = true
-					visitedNodes[ant.CurrentNode] = true
-					demand := nodes[ant.CurrentNode].Demand
-					if ant.RemainingCapacity >= demand {
-						ant.Route = append(ant.Route, ant.CurrentNode)
-						ant.RemainingCapacity -= demand
+		fmt.Println("Iteration:", iteration+1, " ------------------------------------------------------------")
+		var allResult [][]int
+		pheromones := make([][]float64, NumNodes)
+		for i := range pheromones {
+			pheromones[i] = make([]float64, NumNodes)
+			for j := range pheromones[i] {
+				pheromones[i][j] = 1.0
+			}
+		}
+
+		visitedNodes := make([]bool, NumNodes)
+
+		for iteration := 0; iteration < NumIterations; iteration++ {
+			for step := 0; step < NumNodes-1; step++ {
+				for i := range ants {
+					ant := &ants[i]
+					if ant.RemainingCapacity <= 0 {
+						ant.Route = append(ant.Route, startNode)
+						continue
+					}
+					ant.CurrentNode = selectNextNode(ant, pheromones, nodes, visitedNodes)
+					if ant.CurrentNode == startNode {
+						ant.Route = append(ant.Route, startNode)
+					} else {
+						ant.Visited[ant.CurrentNode] = true
+						visitedNodes[ant.CurrentNode] = true
+						demand := nodes[ant.CurrentNode].Demand
+						if ant.RemainingCapacity >= demand {
+							ant.Route = append(ant.Route, ant.CurrentNode)
+							ant.RemainingCapacity -= demand
+						}
 					}
 				}
 			}
+			updatePheromones(pheromones, ants, nodes)
 		}
-		updatePheromones(pheromones, ants, nodes)
-	}
+		// rand.Seed(time.Now().UnixNano())
+		rand.Shuffle(len(ants), func(i, j int) {
+			ants[i], ants[j] = ants[j], ants[i]
+		})
+		for i := range ants {
+			ants[i].Route = append(ants[i].Route, startNode)
+		}
 
-	for i := range ants {
-		ants[i].Route = append(ants[i].Route, startNode)
-	}
-
-	for k, ant := range ants {
-		fmt.Println("Vehicle Route", k+1)
-		fmt.Println(removeDuplicates(ant.Route))
+		for k, ant := range ants {
+			fmt.Println("Vehicle Route", k+1, "--->", removeDuplicates(ant.Route))
+			allResult = append(allResult, removeDuplicates(ant.Route))
+		}
+		fmt.Println("All Routes", allResult)
 	}
 }
 

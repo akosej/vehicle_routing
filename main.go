@@ -111,6 +111,7 @@ func main() {
 		}
 		fmt.Println("All Routes", allResult)
 
+		// ----------------------------------------------------------------------------------
 		// Generar la representación gráfica en formato DOT
 		graphAst := gographviz.NewGraph()
 		graphAst.SetDir(true) // Para un grafo dirigido

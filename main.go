@@ -2,16 +2,21 @@ package main
 
 import (
 	"fmt"
+	"io/ioutil"
 	"math/rand"
+	"strconv"
 	"time"
+
+	"github.com/awalterschulze/gographviz"
 )
 
 const (
 	NumAnts       = 3
 	NumNodes      = 10
-	NumIterations = 10
+	NumIterations = 3
 )
 
+type Graph map[int]map[int]int
 type Node struct {
 	Demand   int
 	Distance []int
@@ -71,43 +76,84 @@ func main() {
 
 		visitedNodes := make([]bool, NumNodes)
 
-		for iteration := 0; iteration < NumIterations; iteration++ {
-			for step := 0; step < NumNodes-1; step++ {
-				for i := range ants {
-					ant := &ants[i]
-					if ant.RemainingCapacity <= 0 {
-						ant.Route = append(ant.Route, startNode)
-						continue
-					}
-					ant.CurrentNode = selectNextNode(ant, pheromones, nodes, visitedNodes)
-					if ant.CurrentNode == startNode {
-						ant.Route = append(ant.Route, startNode)
-					} else {
-						ant.Visited[ant.CurrentNode] = true
-						visitedNodes[ant.CurrentNode] = true
-						demand := nodes[ant.CurrentNode].Demand
-						if ant.RemainingCapacity >= demand {
-							ant.Route = append(ant.Route, ant.CurrentNode)
-							ant.RemainingCapacity -= demand
-						}
+		for step := 0; step < NumNodes-1; step++ {
+			for i := range ants {
+				ant := &ants[i]
+				if ant.RemainingCapacity <= 0 {
+					ant.Route = append(ant.Route, startNode)
+					continue
+				}
+
+				ant.CurrentNode = selectNextNode(ant, pheromones, nodes, visitedNodes)
+				if ant.CurrentNode == startNode {
+					ant.Route = append(ant.Route, startNode)
+				} else {
+					ant.Visited[ant.CurrentNode] = true
+					visitedNodes[ant.CurrentNode] = true
+					demand := nodes[ant.CurrentNode].Demand
+					if ant.RemainingCapacity >= demand {
+						ant.Route = append(ant.Route, ant.CurrentNode)
+						ant.RemainingCapacity -= demand
 					}
 				}
 			}
-			updatePheromones(pheromones, ants, nodes)
 		}
-		// rand.Seed(time.Now().UnixNano())
-		rand.Shuffle(len(ants), func(i, j int) {
-			ants[i], ants[j] = ants[j], ants[i]
-		})
+		updatePheromones(pheromones, ants, nodes)
+
 		for i := range ants {
 			ants[i].Route = append(ants[i].Route, startNode)
 		}
-
-		for k, ant := range ants {
+		vehicleOrder := rand.Perm(len(ants))
+		for _, k := range vehicleOrder {
+			ant := ants[k]
 			fmt.Println("Vehicle Route", k+1, "--->", removeDuplicates(ant.Route))
 			allResult = append(allResult, removeDuplicates(ant.Route))
 		}
 		fmt.Println("All Routes", allResult)
+
+		// Generar la representación gráfica en formato DOT
+		graphAst := gographviz.NewGraph()
+		graphAst.SetDir(true) // Para un grafo dirigido
+		graphAst.SetName("G")
+		currentGraph := make(Graph)
+		for _, ant := range ants {
+			route := ant.Route
+			for i := 0; i < len(route)-1; i++ {
+				from := route[i]
+				to := route[i+1]
+				if _, ok := currentGraph[from]; !ok {
+					currentGraph[from] = make(map[int]int)
+				}
+				currentGraph[from][to] = nodes[to].Distance[from]
+			}
+		}
+		// Agregar los nodos al grafo
+		for node := range currentGraph {
+			attrs := map[string]string{
+				"label": fmt.Sprintf("%d", node),
+			}
+			graphAst.AddNode("G", fmt.Sprintf("%d", node), attrs)
+		}
+
+		// Agregar las aristas al grafo
+		for from, connections := range currentGraph {
+			for to, distance := range connections {
+				attrs := map[string]string{
+					"label": fmt.Sprintf("%d", distance),
+				}
+				graphAst.AddEdge(fmt.Sprintf("%d", from), fmt.Sprintf("%d", to), true, attrs)
+			}
+		}
+
+		dot := graphAst.String()
+
+		// Guardar la representación en un archivo temporal
+		dotFilename := "graph" + strconv.Itoa(iteration) + ".dot"
+		err := ioutil.WriteFile(dotFilename, []byte(dot), 0644)
+		if err != nil {
+			fmt.Println("Error al guardar la representación DOT:", err)
+			return
+		}
 	}
 }
 
@@ -153,6 +199,11 @@ func selectNextNode(ant *Ant, pheromones [][]float64, nodes []Node, visitedNodes
 
 		if selectedNode == -1 {
 			selectedNode = availableNodes[numAvailableNodes-1]
+		}
+
+		// Comprobación de distancia mínima
+		if nodes[selectedNode].Distance[ant.CurrentNode] > ant.RemainingCapacity {
+			break
 		}
 
 		if selectedCapacity+nodes[selectedNode].Demand <= ant.RemainingCapacity && nodes[selectedNode].Demand > 0 {

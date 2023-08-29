@@ -24,19 +24,21 @@ func Print(nodes []models.Node, ants []models.Ant) {
 
 // Remove duplicate nodes in a route
 func RemoveDuplicateNodesInRoute(route []int) []int {
-	encountered := map[int]bool{}
-	result := []int{}
+	// La función `RemoveDuplicateNodesInRoute` se encarga de eliminar los nodos duplicados en una ruta.
+
+	encountered := map[int]bool{} // Mapa para almacenar los nodos encontrados
+	result := []int{}             // Slice para almacenar los nodos únicos
 
 	for _, val := range route {
-		if !encountered[val] {
-			encountered[val] = true
-			result = append(result, val)
+		if !encountered[val] { // Si el nodo no ha sido encontrado anteriormente
+			encountered[val] = true      // Agregar el nodo al mapa como encontrado
+			result = append(result, val) // Agregar el nodo al slice de resultados
 		}
 	}
 
-	result = append(result, 0)
+	result = append(result, 0) // Agregar el nodo de origen al final de la ruta
 
-	return result
+	return result // Devolver la ruta sin nodos duplicados
 }
 
 func Grafo(nodes []models.Node, ants []models.Ant, iteration int) {

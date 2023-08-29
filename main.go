@@ -2,70 +2,49 @@ package main
 
 import (
 	"fmt"
-	"io/ioutil"
 	"math/rand"
-	"strconv"
+	antcolonyalgorithm "routng/antColonyAlgorithm"
+	"routng/core"
+	mathematicalmodel "routng/mathematicalModel"
+	"routng/models"
 	"time"
-
-	"github.com/awalterschulze/gographviz"
 )
 
 const (
 	NumAnts       = 3
 	NumNodes      = 10
-	NumIterations = 3
+	NumIterations = 1
 )
-
-type Graph map[int]map[int]int
-type Node struct {
-	Demand   int
-	Distance []int
-}
-
-type Ant struct {
-	Visited           []bool
-	CurrentNode       int
-	Capacity          int
-	RemainingCapacity int
-	Route             []int
-}
 
 func main() {
 	startNode := 0
 	rand.Seed(time.Now().UnixNano())
 	// Configuración de condiciones específicas para cada nodo
-	nodes := []Node{
-		{Demand: 0, Distance: []int{0, 10, 20, 30, 40, 50, 60, 70, 80, 90}},
-		{Demand: 100, Distance: []int{10, 0, 15, 25, 35, 45, 55, 65, 75, 85}},
-		{Demand: 100, Distance: []int{20, 15, 0, 10, 20, 30, 40, 50, 60, 70}},
-		{Demand: 100, Distance: []int{30, 25, 10, 0, 15, 25, 35, 45, 55, 65}},
-		{Demand: 100, Distance: []int{40, 35, 20, 15, 0, 10, 20, 30, 40, 50}},
-		{Demand: 100, Distance: []int{50, 45, 30, 25, 10, 0, 10, 20, 30, 40}},
-		{Demand: 100, Distance: []int{60, 55, 40, 35, 20, 10, 0, 10, 20, 30}},
-		{Demand: 100, Distance: []int{70, 65, 50, 45, 30, 20, 10, 0, 10, 20}},
-		{Demand: 100, Distance: []int{80, 75, 60, 55, 40, 30, 20, 10, 0, 10}},
-		{Demand: 100, Distance: []int{90, 85, 70, 65, 50, 40, 30, 20, 10, 0}},
+	nodes := []models.Node{
+		{Id: 0, Demand: 0, ServiceTime: 10, Distance: []int{0, 10, 20, 30, 40, 50, 60, 70, 80, 90}},
+		{Id: 1, Demand: 100, ServiceTime: 10, Distance: []int{10, 0, 15, 25, 35, 45, 55, 65, 75, 85}},
+		{Id: 2, Demand: 100, ServiceTime: 10, Distance: []int{20, 15, 0, 10, 20, 30, 40, 50, 60, 70}},
+		{Id: 3, Demand: 100, ServiceTime: 10, Distance: []int{30, 25, 10, 0, 15, 25, 35, 45, 55, 65}},
+		{Id: 4, Demand: 100, ServiceTime: 10, Distance: []int{40, 35, 20, 15, 0, 10, 20, 30, 40, 50}},
+		{Id: 5, Demand: 100, ServiceTime: 10, Distance: []int{50, 45, 30, 25, 10, 0, 10, 20, 30, 40}},
+		{Id: 6, Demand: 100, ServiceTime: 10, Distance: []int{60, 55, 40, 35, 20, 10, 0, 10, 20, 30}},
+		{Id: 7, Demand: 100, ServiceTime: 10, Distance: []int{70, 65, 50, 45, 30, 20, 10, 0, 10, 20}},
+		{Id: 8, Demand: 100, ServiceTime: 10, Distance: []int{80, 75, 60, 55, 40, 30, 20, 10, 0, 10}},
+		{Id: 9, Demand: 100, ServiceTime: 10, Distance: []int{90, 85, 70, 65, 50, 40, 30, 20, 10, 0}},
 	}
 	// Configuración de condiciones específicas para cada Vehiculo
-	ants := []Ant{
-		{Visited: make([]bool, NumNodes), CurrentNode: startNode, Route: []int{startNode}, Capacity: 300, RemainingCapacity: 300},
-		{Visited: make([]bool, NumNodes), CurrentNode: startNode, Route: []int{startNode}, Capacity: 300, RemainingCapacity: 300},
-		{Visited: make([]bool, NumNodes), CurrentNode: startNode, Route: []int{startNode}, Capacity: 300, RemainingCapacity: 300},
+	ants := []models.Ant{
+		{Id: 1, AverageSpeed: 20, Visited: make([]bool, NumNodes), CurrentNode: startNode, Route: []int{startNode}, Capacity: 200, RemainingCapacity: 200, FixedCost: 10, VariableCost: 10},
+		{Id: 2, AverageSpeed: 20, Visited: make([]bool, NumNodes), CurrentNode: startNode, Route: []int{startNode}, Capacity: 200, RemainingCapacity: 200, FixedCost: 10, VariableCost: 10},
+		{Id: 3, AverageSpeed: 20, Visited: make([]bool, NumNodes), CurrentNode: startNode, Route: []int{startNode}, Capacity: 200, RemainingCapacity: 200, FixedCost: 10, VariableCost: 10},
 	}
+	// Print the properties of the nodes and the vehicles
+	// core.Print(nodes, ants)
 
-	fmt.Println("--------Nodos---------")
-	for i, node := range nodes {
-		fmt.Println(i, " Demand:", node.Demand)
-	}
-
-	fmt.Println("--------Vihicle---------")
-	for i, ant := range ants {
-		fmt.Println(i+1, " Capacity:", ant.Capacity)
-	}
-	fmt.Println("------------------------------------------------------------")
 	for iteration := 0; iteration < NumIterations; iteration++ {
 		fmt.Println("Iteration:", iteration+1, " ------------------------------------------------------------")
 		var allResult [][]int
+
 		pheromones := make([][]float64, NumNodes)
 		for i := range pheromones {
 			pheromones[i] = make([]float64, NumNodes)
@@ -79,18 +58,24 @@ func main() {
 		for step := 0; step < NumNodes-1; step++ {
 			for i := range ants {
 				ant := &ants[i]
+
 				if ant.RemainingCapacity <= 0 {
 					ant.Route = append(ant.Route, startNode)
 					continue
 				}
 
-				ant.CurrentNode = selectNextNode(ant, pheromones, nodes, visitedNodes)
+				// Select the next node that the vehicle will visit
+				ant.CurrentNode = antcolonyalgorithm.SelectNextNode(ant, pheromones, nodes, visitedNodes, NumNodes)
+
 				if ant.CurrentNode == startNode {
+					// [0]
 					ant.Route = append(ant.Route, startNode)
 				} else {
+
 					ant.Visited[ant.CurrentNode] = true
 					visitedNodes[ant.CurrentNode] = true
 					demand := nodes[ant.CurrentNode].Demand
+
 					if ant.RemainingCapacity >= demand {
 						ant.Route = append(ant.Route, ant.CurrentNode)
 						ant.RemainingCapacity -= demand
@@ -98,171 +83,38 @@ func main() {
 				}
 			}
 		}
-		updatePheromones(pheromones, ants, nodes)
+
+		antcolonyalgorithm.UpdatePheromones(pheromones, ants, nodes, NumNodes)
 
 		for i := range ants {
 			ants[i].Route = append(ants[i].Route, startNode)
 		}
-		vehicleOrder := rand.Perm(len(ants))
-		for _, k := range vehicleOrder {
-			ant := ants[k]
-			fmt.Println("Vehicle Route", k+1, "--->", removeDuplicates(ant.Route))
-			allResult = append(allResult, removeDuplicates(ant.Route))
-		}
-		fmt.Println("All Routes", allResult)
 
-		// ----------------------------------------------------------------------------------
-		// Generar la representación gráfica en formato DOT
-		graphAst := gographviz.NewGraph()
-		graphAst.SetDir(true) // Para un grafo dirigido
-		graphAst.SetName("G")
-		currentGraph := make(Graph)
+		var cost_total_iteration float64
+		var time_total_iteration float64
+
+		// vehicleOrder := rand.Perm(len(ants))
 		for _, ant := range ants {
-			route := ant.Route
-			for i := 0; i < len(route)-1; i++ {
-				from := route[i]
-				to := route[i+1]
-				if _, ok := currentGraph[from]; !ok {
-					currentGraph[from] = make(map[int]int)
-				}
-				currentGraph[from][to] = nodes[to].Distance[from]
-			}
-		}
-		// Agregar los nodos al grafo
-		for node := range currentGraph {
-			attrs := map[string]string{
-				"label": fmt.Sprintf("%d", node),
-			}
-			graphAst.AddNode("G", fmt.Sprintf("%d", node), attrs)
-		}
+			// ant := ants[k]
+			route := core.RemoveDuplicateNodesInRoute(ant.Route)
+			// Calculate distances and service times for each route
+			distance, serviceTime := mathematicalmodel.SumDistanceAndServicesTime(route, nodes)
+			// Calculation of the costs of each route
+			cost := mathematicalmodel.CostTarget(distance, float64(ant.VariableCost), float64(ant.FixedCost))
+			cost_total_iteration += float64(cost)
 
-		// Agregar las aristas al grafo
-		for from, connections := range currentGraph {
-			for to, distance := range connections {
-				attrs := map[string]string{
-					"label": fmt.Sprintf("%d", distance),
-				}
-				graphAst.AddEdge(fmt.Sprintf("%d", from), fmt.Sprintf("%d", to), true, attrs)
-			}
-		}
+			// Calculation of total route time:
+			totalTime := mathematicalmodel.TimeTarget(ant.AverageSpeed, float64(distance), float64(serviceTime))
+			time_total_iteration += totalTime
 
-		dot := graphAst.String()
-
-		// Guardar la representación en un archivo temporal
-		dotFilename := "graph" + strconv.Itoa(iteration) + ".dot"
-		err := ioutil.WriteFile(dotFilename, []byte(dot), 0644)
-		if err != nil {
-			fmt.Println("Error al guardar la representación DOT:", err)
-			return
+			fmt.Println("Vehicle Route", ant.Id, "--ROUTE-->", route, "--distance-->", distance, "km --COST-->", cost, " --Total Time:", totalTime)
+			// -----------
+			allResult = append(allResult, route)
 		}
+		fmt.Println("-------------")
+		fmt.Println("All Routes: ", allResult, " ---COST:", cost_total_iteration, "  ---Total Time:", time_total_iteration)
+
+		// Generate graph for each iteration
+		core.Grafo(nodes, ants, iteration)
 	}
-}
-
-func selectNextNode(ant *Ant, pheromones [][]float64, nodes []Node, visitedNodes []bool) int {
-	var totalPheromone float64
-	var numAvailableNodes int
-
-	for i := 0; i < NumNodes; i++ {
-		if !ant.Visited[i] && !visitedNodes[i] {
-			totalPheromone += pheromones[ant.CurrentNode][i] * (1 / float64(nodes[i].Distance[ant.CurrentNode]))
-			numAvailableNodes++
-		}
-	}
-
-	if numAvailableNodes == 0 {
-		return ant.CurrentNode
-	}
-
-	probs := make([]float64, numAvailableNodes)
-	availableNodes := make([]int, numAvailableNodes)
-	index := 0
-	for i := 0; i < NumNodes; i++ {
-		if !ant.Visited[i] && !visitedNodes[i] {
-			probs[index] = (pheromones[ant.CurrentNode][i] * (1 / float64(nodes[i].Distance[ant.CurrentNode]))) / totalPheromone
-			availableNodes[index] = i
-			index++
-		}
-	}
-
-	selectedNodes := make([]int, 0)
-	selectedCapacity := 0
-	for selectedCapacity < ant.RemainingCapacity {
-		r := rand.Float64()
-		sum := 0.0
-		selectedNode := -1
-		for i := 0; i < numAvailableNodes; i++ {
-			sum += probs[i]
-			if r <= sum {
-				selectedNode = availableNodes[i]
-				break
-			}
-		}
-
-		if selectedNode == -1 {
-			selectedNode = availableNodes[numAvailableNodes-1]
-		}
-
-		// Comprobación de distancia mínima
-		if nodes[selectedNode].Distance[ant.CurrentNode] > ant.RemainingCapacity {
-			break
-		}
-
-		if selectedCapacity+nodes[selectedNode].Demand <= ant.RemainingCapacity && nodes[selectedNode].Demand > 0 {
-			selectedCapacity += nodes[selectedNode].Demand
-			ant.Visited[selectedNode] = true
-			selectedNodes = append(selectedNodes, selectedNode)
-		} else {
-			break
-		}
-	}
-
-	if len(selectedNodes) > 0 {
-		for _, node := range selectedNodes {
-			ant.Capacity -= nodes[node].Demand
-			ant.CurrentNode = node
-		}
-		if len(selectedNodes) == 1 {
-			return selectedNodes[0]
-		}
-		return selectedNodes[len(selectedNodes)-1]
-	}
-
-	return ant.CurrentNode
-}
-
-func updatePheromones(pheromones [][]float64, ants []Ant, nodes []Node) {
-	evaporation := 0.5
-
-	for i := 0; i < NumNodes; i++ {
-		for j := 0; j < NumNodes; j++ {
-			if i != j {
-				pheromones[i][j] *= evaporation
-			}
-		}
-	}
-
-	for _, ant := range ants {
-		route := ant.Route
-		for i := 0; i < len(route)-1; i++ {
-			from := route[i]
-			to := route[i+1]
-			pheromones[from][to] += 1 / float64(nodes[to].Distance[from])
-		}
-	}
-}
-
-func removeDuplicates(route []int) []int {
-	encountered := map[int]bool{}
-	result := []int{}
-
-	for _, val := range route {
-		if !encountered[val] {
-			encountered[val] = true
-			result = append(result, val)
-		}
-	}
-
-	result = append(result, 0)
-
-	return result
 }

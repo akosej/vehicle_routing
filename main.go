@@ -41,8 +41,8 @@ func main() {
 
 	core.Print(nodes, ants) // Se llama a la función Print del paquete core
 
-	for iteration := 0; iteration < NumIterations; iteration++ { // Se inicia un ciclo for para iterar un número determinado de veces
-		fmt.Println("Iteration:", iteration+1, " ------------------------------------------------------------")
+	for iteration := 1; iteration <= NumIterations; iteration++ { // Se inicia un ciclo for para iterar un número determinado de veces
+		fmt.Println("Iteration:", iteration, " ------------------------------------------------------------")
 
 		var allResult [][]int            // Se declara una variable para almacenar los resultados de todas las iteraciones
 		var cost_total_iteration float64 // Se declara una variable para almacenar el costo total de la iteración actual
@@ -103,7 +103,7 @@ func main() {
 			for i := range antss { // Se itera sobre las vehiculoss para los nodos no visitados
 				ants[i].Route = append(ants[i].Route, antss[i].Route...) // Se agrega la ruta de cada vehiculos al slice de rutas de todas las vehiculoss
 			}
-			fmt.Println(remainingVisited)
+
 			result1, cost_total1, time_total1 := TransportationPeriod(antss, nodes) // Se llama a la función TransportationPeriod para realizar el período de transporte para los nodos no visitados
 			allResult = append(allResult, result1...)                               // Se agrega el resultado de los nodos no visitados al slice allResult
 			cost_total_iteration += cost_total1                                     // Se suma el costo total de los nodos no visitados al costo total acumulado

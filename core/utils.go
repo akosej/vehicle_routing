@@ -2,7 +2,7 @@ package core
 
 import (
 	"fmt"
-	"io/ioutil"
+	"os"
 	"routng/models"
 	"strconv"
 
@@ -82,7 +82,7 @@ func Grafo(nodes []models.Node, ants []models.Ant, iteration int) {
 
 	// Guardar la representación en un archivo temporal
 	dotFilename := "iteration" + strconv.Itoa(iteration) + ".dot"
-	err := ioutil.WriteFile("./grafos/"+dotFilename, []byte(dot), 0644)
+	err := os.WriteFile("./grafos/"+dotFilename, []byte(dot), 0644)
 	if err != nil {
 		fmt.Println("Error al guardar la representación DOT:", err)
 		return

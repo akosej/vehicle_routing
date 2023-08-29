@@ -6,7 +6,9 @@ import "routng/models"
 func SumDistanceAndServicesTime(route []int, nodes []models.Node) (float64, float64) {
 
 	var distance, serviceTime float64
-
+	if len(route) == 2 {
+		return 0, 0
+	}
 	for i := 0; i < len(route)-1; i++ {
 		from := route[i]
 		to := route[i+1]

@@ -1,0 +1,29 @@
+digraph G {
+	4->9[ label=50 ];
+	9->0[ label=90 ];
+	10->8[ label=10 ];
+	8->0[ label=80 ];
+	5->0[ label=50 ];
+	3->2[ label=10 ];
+	2->0[ label=20 ];
+	6->0[ label=60 ];
+	0->3[ label=30 ];
+	0->1[ label=10 ];
+	0->4[ label=40 ];
+	0->10[ label=100 ];
+	0->7[ label=70 ];
+	7->5[ label=20 ];
+	1->6[ label=55 ];
+	0 [ label=0 ];
+	1 [ label=1 ];
+	10 [ label=10 ];
+	2 [ label=2 ];
+	3 [ label=3 ];
+	4 [ label=4 ];
+	5 [ label=5 ];
+	6 [ label=6 ];
+	7 [ label=7 ];
+	8 [ label=8 ];
+	9 [ label=9 ];
+
+}

@@ -17,9 +17,8 @@ func Print(nodes []models.Node, ants []models.Ant) {
 
 	fmt.Println("--------Vihicle---------")
 	for _, ant := range ants {
-		fmt.Println(ant.Id, " Capacity:", ant.Capacity, " FixedCost:", ant.FixedCost, " VariableCost:", ant.VariableCost, " AverageSpeed:", ant.AverageSpeed)
+		fmt.Println(ant.Id, " AverageSpeed:", ant.AverageSpeed, " Capacity:", ant.Capacity, " FixedCost:", ant.FixedCost, " VariableCost:", ant.VariableCost)
 	}
-	fmt.Println("------------------------------------------------------------")
 }
 
 // Remove duplicate nodes in a route
@@ -43,10 +42,13 @@ func RemoveDuplicateNodesInRoute(route []int) []int {
 
 func Grafo(nodes []models.Node, ants []models.Ant, iteration int) {
 	// Generar la representación gráfica en formato DOT
-	graphAst := gographviz.NewGraph()
-	graphAst.SetDir(true) // Para un grafo dirigido
-	graphAst.SetName("G")
+	// Generar la representación gráfica en formato DOT
+	// Restablecer las variables a sus valores iniciales
 	currentGraph := make(models.Graph)
+	graphAst := gographviz.NewGraph()
+	graphAst.SetDir(true)
+	graphAst.SetName("G")
+
 	for _, ant := range ants {
 		route := ant.Route
 		for i := 0; i < len(route)-1; i++ {
@@ -55,8 +57,14 @@ func Grafo(nodes []models.Node, ants []models.Ant, iteration int) {
 			if _, ok := currentGraph[from]; !ok {
 				currentGraph[from] = make(map[int]int)
 			}
-			currentGraph[from][to] = nodes[to].Distance[from]
+			currentGraph[from][to] = nodes[from].Distance[to]
 		}
+		// Agregar el retorno al nodo inicial
+		lastNode := route[len(route)-1]
+		if _, ok := currentGraph[lastNode]; !ok {
+			currentGraph[lastNode] = make(map[int]int)
+		}
+		currentGraph[lastNode][route[0]] = nodes[lastNode].Distance[route[0]]
 	}
 	// Agregar los nodos al grafo
 	for node := range currentGraph {
@@ -72,13 +80,18 @@ func Grafo(nodes []models.Node, ants []models.Ant, iteration int) {
 			attrs := map[string]string{
 				"label": fmt.Sprintf("%d", distance),
 			}
-			if !(from == to) {
+			if from != to {
 				graphAst.AddEdge(fmt.Sprintf("%d", from), fmt.Sprintf("%d", to), true, attrs)
 			}
 		}
 	}
 
 	dot := graphAst.String()
+
+	// Restablecer las variables a sus valores iniciales
+	graphAst = gographviz.NewGraph()
+	graphAst.SetDir(true)
+	graphAst.SetName("G")
 
 	// Guardar la representación en un archivo temporal
 	dotFilename := "iteration" + strconv.Itoa(iteration) + ".dot"

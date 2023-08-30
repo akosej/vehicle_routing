@@ -3,12 +3,13 @@ package antcolonyalgorithm
 import (
 	"math/rand"
 	"routng/models"
+	"time"
 )
 
 func UpdatePheromones(pheromones [][]float64, ants []models.Ant, nodes []models.Node, NumNodes int) {
 	// La función `UpdatePheromones` se encarga de actualizar los niveles de feromonas en el grafo del algoritmo de colonia de hormigas.
 
-	evaporation := 0.5
+	evaporation := 0.1
 
 	// Evaporar las feromonas existentes
 	for i := 0; i < NumNodes; i++ {
@@ -48,6 +49,8 @@ func SelectNextNode(ant *models.Ant, pheromones [][]float64, nodes []models.Node
 		}
 	}
 
+	// fmt.Println("Veh: ", ant.Id, " totalPheromone: ", totalPheromone, " numAvailableNodes: ", numAvailableNodes)
+
 	if numAvailableNodes == 0 {
 		// Si no hay nodos disponibles para visitar, se devuelve el nodo actual de la hormiga
 		return ant.CurrentNode
@@ -70,9 +73,19 @@ func SelectNextNode(ant *models.Ant, pheromones [][]float64, nodes []models.Node
 	// Crear slices para almacenar los nodos seleccionados y la capacidad seleccionada
 	selectedNodes := make([]int, 0)
 	selectedCapacity := 0
-	for selectedCapacity < ant.RemainingCapacity {
+
+	for selectedCapacity <= ant.RemainingCapacity {
 		// Generar un número aleatorio entre 0 y 1
-		r := rand.Float64()
+		rand.Seed(time.Now().UnixNano())
+		SumPro := 0.0
+		for i := 0; i < numAvailableNodes; i++ {
+			SumPro += probs[i]
+		}
+
+		// min := 0.0  // Minimum value
+		// Generate a random float64 number within the specified range
+		r := rand.Float64() * (SumPro)
+
 		sum := 0.0
 		selectedNode := -1
 		for i := 0; i < numAvailableNodes; i++ {
@@ -86,41 +99,37 @@ func SelectNextNode(ant *models.Ant, pheromones [][]float64, nodes []models.Node
 		}
 
 		if selectedNode == -1 {
-			// Si no se seleccionó ningún nodo, seleccionar el último nodo disponible
-			selectedNode = availableNodes[numAvailableNodes-1]
+			// Si no se seleccionó ningún nodo, seleccionar el un nodo aleatorio
+			rand.Seed(time.Now().UnixNano())
+
+			// Generar un número aleatorio en el rango del 1 al 9
+			randomNumber := rand.Intn(numAvailableNodes)
+			selectedNode = availableNodes[randomNumber]
 		}
 
 		// Comprobación de distancia mínima
-		if nodes[selectedNode].Distance[ant.CurrentNode] > ant.RemainingCapacity {
-			// Si la distancia entre el nodo seleccionado y el nodo actual es mayor que la capacidad restante, se interrumpe la selección
-			break
-		}
+		// if nodes[selectedNode].Distance[ant.CurrentNode] > ant.RemainingCapacity {
+		// 	// Si la distancia entre el nodo seleccionado y el nodo actual es mayor que la capacidad restante, se interrumpe la selección
+		// 	break
+		// }
 
+		// Si la capacidad seleccionada más la demanda del nodo seleccionado es menor o igual a la capacidad restante de la hormiga
+		// y la demanda del nodo seleccionado es mayor que 0
 		if selectedCapacity+nodes[selectedNode].Demand <= ant.RemainingCapacity && nodes[selectedNode].Demand > 0 {
-			// Si la capacidad seleccionada más la demanda del nodo seleccionado es menor o igual a la capacidad restante de la hormiga y la demanda del nodo seleccionado es mayor que 0
 			// Se actualiza la capacidad seleccionada, se marca el nodo como visitado y se agrega el nodo a los nodos seleccionados
 			selectedCapacity += nodes[selectedNode].Demand
 			ant.Visited[selectedNode] = true
 			selectedNodes = append(selectedNodes, selectedNode)
-		} else {
-			// Si no se cumple la condición anterior, se interrumpe la selección
-			break
 		}
+		// Si no se cumple la condición anterior, se interrumpe la selección
+		break
 	}
 
 	if len(selectedNodes) > 0 {
-		// Si se seleccionaron nodos
-		for _, node := range selectedNodes {
-			// Se actualiza la capacidad y el nodo actual de la hormiga según los nodos seleccionados
-			ant.Capacity -= nodes[node].Demand
-			ant.CurrentNode = node
-		}
-		if len(selectedNodes) == 1 {
-			// Si solo se seleccionó un nodo, se devuelve ese nodo
-			return selectedNodes[0]
-		}
-		// Si se seleccionaron varios nodos, se devuelve el último nodo seleccionado
-		return selectedNodes[len(selectedNodes)-1]
+
+		ant.Capacity -= nodes[selectedNodes[0]].Demand
+		ant.CurrentNode = selectedNodes[0]
+		return selectedNodes[0]
 	}
 
 	// Si no se seleccionó ningún nodo, se devuelve el nodo actual de la hormiga
@@ -129,20 +138,27 @@ func SelectNextNode(ant *models.Ant, pheromones [][]float64, nodes []models.Node
 
 func GenerateRoute(nodes []models.Node, ants []models.Ant, NumNodes, startNode int, pheromones [][]float64, remainingVisited []bool) {
 	// Generar nuevas rutas con los nodos no visitados
-	for step := 0; step < NumNodes-1; step++ {
-		for i := range ants {
-			ant := &ants[i]
+	for i := range ants {
+		ant := &ants[i]
 
-			if ant.RemainingCapacity <= 0 {
-				// Si la capacidad restante de la hormiga es menor o igual a cero,
-				// se agrega el nodo inicial a la ruta de la hormiga y se continúa con la siguiente iteración.
-				ant.Route = append(ant.Route, startNode)
-				continue
+		if ant.RemainingCapacity <= 0 {
+			// Si la capacidad restante de la hormiga es menor o igual a cero,
+			// se agrega el nodo inicial a la ruta de la hormiga y se continúa con la siguiente iteración.
+			ant.Route = append(ant.Route, startNode)
+			continue
+		}
+
+		// Seleccionar el siguiente nodo que aún no se haya visitado
+		totalDemand := 0
+		for i, value := range remainingVisited {
+			if !value {
+				totalDemand += nodes[i].Demand
 			}
+		}
 
-			// Seleccionar el siguiente nodo que aún no se haya visitado
+		for ant.RemainingCapacity > 0 && totalDemand > 0 {
+
 			ant.CurrentNode = SelectNextNode(ant, pheromones, nodes, remainingVisited, NumNodes)
-
 			if ant.CurrentNode == startNode {
 				// Si el siguiente nodo seleccionado es el nodo inicial,
 				// se agrega el nodo inicial a la ruta de la hormiga.
@@ -150,16 +166,22 @@ func GenerateRoute(nodes []models.Node, ants []models.Ant, NumNodes, startNode i
 			} else {
 				// Si el siguiente nodo seleccionado no es el nodo inicial,
 				// se marca como visitado tanto en la hormiga como en la lista de nodos no visitados.
-				ant.Visited[ant.CurrentNode] = true
-				remainingVisited[ant.CurrentNode] = true
 
-				demand := nodes[ant.CurrentNode].Demand
-				if ant.RemainingCapacity >= demand {
-					// Se actualiza la capacidad restante de la hormiga restando la demanda del nodo seleccionado.
-					ant.Route = append(ant.Route, ant.CurrentNode)
-					ant.RemainingCapacity -= demand
+				if !remainingVisited[ant.CurrentNode] {
+					ant.Visited[ant.CurrentNode] = true
+					remainingVisited[ant.CurrentNode] = true
+
+					demand := nodes[ant.CurrentNode].Demand
+
+					if ant.RemainingCapacity >= demand {
+						// Se actualiza la capacidad restante de la hormiga restando la demanda del nodo seleccionado.
+						ant.Route = append(ant.Route, ant.CurrentNode)
+						ant.RemainingCapacity -= demand
+						totalDemand -= demand
+					}
 				}
 			}
 		}
+
 	}
 }

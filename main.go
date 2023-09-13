@@ -15,8 +15,7 @@ import (
 )
 
 const (
-	// NumNodes      = 10
-	NumIterations = 10
+	NumIterations = 2
 )
 
 func main() {

@@ -19,7 +19,8 @@ const (
 )
 
 func main() {
-	startNode := 0 // Se define el nodo de inicio como 0
+	startNode := 0
+	// Se define el nodo de inicio como 0
 
 	rand.Seed(time.Now().UnixNano()) // Se establece la semilla para la generación de números aleatorios
 

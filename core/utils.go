@@ -57,14 +57,14 @@ func Grafo(nodes []models.Node, ants []models.Ant, iteration int) {
 			if _, ok := currentGraph[from]; !ok {
 				currentGraph[from] = make(map[int]int)
 			}
-			currentGraph[from][to] = nodes[from].Distance[to]
+			currentGraph[from][to] = int(nodes[from].Distance[to])
 		}
 		// Agregar el retorno al nodo inicial
 		lastNode := route[len(route)-1]
 		if _, ok := currentGraph[lastNode]; !ok {
 			currentGraph[lastNode] = make(map[int]int)
 		}
-		currentGraph[lastNode][route[0]] = nodes[lastNode].Distance[route[0]]
+		currentGraph[lastNode][route[0]] = int(nodes[lastNode].Distance[route[0]])
 	}
 	// Agregar los nodos al grafo
 	for node := range currentGraph {

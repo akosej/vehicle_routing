@@ -1,3 +1,6 @@
-id | AverageSpeed | Capacity | FixedCost | VariableCost
-1,20,300,10,10
-2,20,400,10,10
+ID,AverageSpeed,Capacity,FixedCost,VariableCost
+1,50,19990,197.26,19.72
+2,50,23894,197.26,19.29
+3,50,23609,197.26,19.29
+4,50,11070,197.26,22.72
+5,50,11066,197.26,22.72

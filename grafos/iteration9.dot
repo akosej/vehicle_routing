@@ -1,0 +1,45 @@
+digraph G {
+	6->0[ label=99 ];
+	15->16[ label=147 ];
+	7->0[ label=65 ];
+	13->9[ label=88 ];
+	9->0[ label=40 ];
+	0->10[ label=41 ];
+	0->2[ label=36 ];
+	0->17[ label=101 ];
+	0->3[ label=21 ];
+	0->11[ label=31 ];
+	0->14[ label=142 ];
+	0->13[ label=128 ];
+	11->12[ label=22 ];
+	2->5[ label=35 ];
+	4->0[ label=80 ];
+	12->15[ label=98 ];
+	14->8[ label=101 ];
+	5->0[ label=22 ];
+	17->4[ label=49 ];
+	3->1[ label=86 ];
+	1->6[ label=197 ];
+	16->0[ label=49 ];
+	8->7[ label=54 ];
+	10->0[ label=41 ];
+	0 [ label=0 ];
+	1 [ label=1 ];
+	10 [ label=10 ];
+	11 [ label=11 ];
+	12 [ label=12 ];
+	13 [ label=13 ];
+	14 [ label=14 ];
+	15 [ label=15 ];
+	16 [ label=16 ];
+	17 [ label=17 ];
+	2 [ label=2 ];
+	3 [ label=3 ];
+	4 [ label=4 ];
+	5 [ label=5 ];
+	6 [ label=6 ];
+	7 [ label=7 ];
+	8 [ label=8 ];
+	9 [ label=9 ];
+
+}

@@ -6,7 +6,7 @@ type Node struct {
 	Id          int
 	Demand      int
 	ServiceTime int
-	Distance    []int
+	Distance    []float64
 }
 
 type Ant struct {

@@ -28,7 +28,7 @@ func UpdatePheromones(pheromones [][]float64, ants []models.Ant, nodes []models.
 			from := route[i]
 			to := route[i+1]
 			// Se incrementa el nivel de feromonas en la arista correspondiente al movimiento de la hormiga
-			pheromones[from][to] += 1 / float64(nodes[to].Distance[from])
+			pheromones[from][to] += 1 / nodes[to].Distance[from]
 		}
 	}
 }
@@ -166,12 +166,13 @@ func GenerateRoute(nodes []models.Node, ants []models.Ant, NumNodes, startNode i
 			} else {
 				// Si el siguiente nodo seleccionado no es el nodo inicial,
 				// se marca como visitado tanto en la hormiga como en la lista de nodos no visitados.
-
 				if !remainingVisited[ant.CurrentNode] {
 					ant.Visited[ant.CurrentNode] = true
 					remainingVisited[ant.CurrentNode] = true
 
 					demand := nodes[ant.CurrentNode].Demand
+
+					// fmt.Println(ant.RemainingCapacity, demand, nodes[ant.CurrentNode].Id, nodes[ant.CurrentNode].Demand)
 
 					if ant.RemainingCapacity >= demand {
 						// Se actualiza la capacidad restante de la hormiga restando la demanda del nodo seleccionado.
@@ -179,8 +180,13 @@ func GenerateRoute(nodes []models.Node, ants []models.Ant, NumNodes, startNode i
 						ant.RemainingCapacity -= demand
 						totalDemand -= demand
 					}
+					// TODO Aqui hay que ver lo de los remanentes para ver la capacidad que le queda al vehiculo
+					if ant.RemainingCapacity < demand {
+						ant.RemainingCapacity = 0
+					}
 				}
 			}
+
 		}
 
 	}

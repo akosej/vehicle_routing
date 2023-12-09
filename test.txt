@@ -1,0 +1,146 @@
+ ------------------------------------------------------------Iteration: 1  ------------------------------------------------------------
+Vehicle: 1 --ROUTE--> [0 6 15 13 0] --distance--> 277 km --COST--> 5659.7  --Total Time: 125.54  ---RemainingCapacity-- 0  ---Capacity-- 1633
+Vehicle: 2 --ROUTE--> [0 7 10 9 0] --distance--> 206.03 km --COST--> 4171.5787  --Total Time: 124.1206  ---RemainingCapacity-- 0  ---Capacity-- 2688
+Vehicle: 3 --ROUTE--> [0 14 8 3 0] --distance--> 321.89 km --COST--> 6406.518099999999  --Total Time: 126.4378  ---RemainingCapacity-- 0  ---Capacity-- 2554
+Vehicle: 4 --ROUTE--> [0 11 5 0] --distance--> 101.21999999999998 km --COST--> 2496.9784  --Total Time: 92.0244  ---RemainingCapacity-- 0  ---Capacity-- 46
+Vehicle: 5 --ROUTE--> [0 17 0] --distance--> 202.62 km --COST--> 4800.7864  --Total Time: 64.0524  ---RemainingCapacity-- 0  ---Capacity-- 4754
+Vehicle: 1 --ROUTE--> [0 16 12 4 0] --distance--> 263.27 km --COST--> 5388.944399999999  --Total Time: 125.2654  ---RemainingCapacity-- 0  ---Capacity-- 1355
+Vehicle: 2 --ROUTE--> [0 2 1 0] --distance--> 264.19 km --COST--> 5293.4851  --Total Time: 95.2838  ---RemainingCapacity-- 8950  ---Capacity-- 8950
+-------------
+All Routes:  [[0 6 15 13 0] [0 7 10 9 0] [0 14 8 3 0] [0 11 5 0] [0 17 0] [0 16 12 4 0] [0 2 1 0]]  ---COST: 34809.7711   ---Total Time: 752.7244000000001
+ ------------------------------------------------------------Iteration: 2  ------------------------------------------------------------
+Vehicle: 1 --ROUTE--> [0 17 3 0] --distance--> 236.02 km --COST--> 4851.5744  --Total Time: 94.7204  ---RemainingCapacity-- 0  ---Capacity-- 6456
+Vehicle: 2 --ROUTE--> [0 6 4 0] --distance--> 201.87 km --COST--> 4091.3323  --Total Time: 94.0374  ---RemainingCapacity-- 0  ---Capacity-- 7262
+Vehicle: 3 --ROUTE--> [0 5 2 8 0] --distance--> 122.54 km --COST--> 2561.0566  --Total Time: 122.4508  ---RemainingCapacity-- 0  ---Capacity-- 3024
+Vehicle: 4 --ROUTE--> [0 11 16 0] --distance--> 120.44 km --COST--> 2933.6567999999997  --Total Time: 92.4088  ---RemainingCapacity-- 0  ---Capacity-- 2188
+Vehicle: 5 --ROUTE--> [0 13 15 0] --distance--> 261.94 km --COST--> 6148.5368  --Total Time: 95.2388  ---RemainingCapacity-- 0  ---Capacity-- 345
+Vehicle: 1 --ROUTE--> [0 14 7 0] --distance--> 295.61 km --COST--> 6026.6892  --Total Time: 95.9122  ---RemainingCapacity-- 0  ---Capacity-- 4614
+Vehicle: 2 --ROUTE--> [0 12 10 9 0] --distance--> 167.48 km --COST--> 3427.9492  --Total Time: 123.3496  ---RemainingCapacity-- 0  ---Capacity-- 5273
+Vehicle: 3 --ROUTE--> [0 1 0] --distance--> 196.9 km --COST--> 3995.4610000000002  --Total Time: 63.938  ---RemainingCapacity-- 16427  ---Capacity-- 16427
+-------------
+All Routes:  [[0 17 3 0] [0 6 4 0] [0 5 2 8 0] [0 11 16 0] [0 13 15 0] [0 14 7 0] [0 12 10 9 0] [0 1 0]]  ---COST: 34430.7763   ---Total Time: 782.0559999999999
+ ------------------------------------------------------------Iteration: 3  ------------------------------------------------------------
+Vehicle: 1 --ROUTE--> [0 8 6 0] --distance--> 225.54000000000002 km --COST--> 4644.9088  --Total Time: 94.5108  ---RemainingCapacity-- 0  ---Capacity-- 5995
+Vehicle: 2 --ROUTE--> [0 10 4 0] --distance--> 200.74 km --COST--> 4069.5346  --Total Time: 94.0148  ---RemainingCapacity-- 0  ---Capacity-- 7124
+Vehicle: 3 --ROUTE--> [0 12 7 9 0] --distance--> 162.39 km --COST--> 3329.763099999999  --Total Time: 123.2478  ---RemainingCapacity-- 0  ---Capacity-- 4860
+Vehicle: 4 --ROUTE--> [0 14 0] --distance--> 285.32 km --COST--> 6679.7303999999995  --Total Time: 65.7064  ---RemainingCapacity-- 0  ---Capacity-- 3596
+Vehicle: 5 --ROUTE--> [0 5 0] --distance--> 44.48 km --COST--> 1207.8455999999999  --Total Time: 60.8896  ---RemainingCapacity-- 0  ---Capacity-- 4602
+Vehicle: 1 --ROUTE--> [0 16 1 2 0] --distance--> 264.2 km --COST--> 5407.284  --Total Time: 125.284  ---RemainingCapacity-- 0  ---Capacity-- 724
+Vehicle: 2 --ROUTE--> [0 15 3 11 17 0] --distance--> 482.63 km --COST--> 9507.1927  --Total Time: 159.6526  ---RemainingCapacity-- 0  ---Capacity-- 132
+Vehicle: 3 --ROUTE--> [0 13 0] --distance--> 256.66 km --COST--> 5148.231400000001  --Total Time: 65.1332  ---RemainingCapacity-- 18556  ---Capacity-- 18556
+-------------
+All Routes:  [[0 8 6 0] [0 10 4 0] [0 12 7 9 0] [0 14 0] [0 5 0] [0 16 1 2 0] [0 15 3 11 17 0] [0 13 0]]  ---COST: 40389.010599999994   ---Total Time: 788.4391999999999       
+ ------------------------------------------------------------Iteration: 4  ------------------------------------------------------------
+Vehicle: 1 --ROUTE--> [0 16 4 0] --distance--> 257.74 km --COST--> 5279.8928000000005  --Total Time: 95.1548  ---RemainingCapacity-- 0  ---Capacity-- 6672
+Vehicle: 2 --ROUTE--> [0 2 8 9 0] --distance--> 116.30000000000001 km --COST--> 2440.687  --Total Time: 122.326  ---RemainingCapacity-- 0  ---Capacity-- 4243
+Vehicle: 3 --ROUTE--> [0 14 12 5 0] --distance--> 361.41 km --COST--> 7168.8589  --Total Time: 127.2282  ---RemainingCapacity-- 0  ---Capacity-- 4354
+Vehicle: 4 --ROUTE--> [0 3 0] --distance--> 43.94 km --COST--> 1195.5767999999998  --Total Time: 60.8788  ---RemainingCapacity-- 0  ---Capacity-- 3848
+Vehicle: 5 --ROUTE--> [0 15 0] --distance--> 196.9 km --COST--> 4670.828  --Total Time: 63.938  ---RemainingCapacity-- 0  ---Capacity-- 5398
+Vehicle: 1 --ROUTE--> [0 17 13 11 0] --distance--> 312.9200000000001 km --COST--> 6368.042400000001  --Total Time: 126.2584  ---RemainingCapacity-- 0  ---Capacity-- 4065      
+Vehicle: 2 --ROUTE--> [0 1 10 7 0] --distance--> 355.55 km --COST--> 7055.8195000000005  --Total Time: 127.111  ---RemainingCapacity-- 0  ---Capacity-- 1036
+Vehicle: 3 --ROUTE--> [0 6 0] --distance--> 198.9 km --COST--> 4034.041  --Total Time: 63.978  ---RemainingCapacity-- 15973  ---Capacity-- 15973
+-------------
+All Routes:  [[0 16 4 0] [0 2 8 9 0] [0 14 12 5 0] [0 3 0] [0 15 0] [0 17 13 11 0] [0 1 10 7 0] [0 6 0]]  ---COST: 38608.2664   ---Total Time: 786.8732
+ ------------------------------------------------------------Iteration: 5  ------------------------------------------------------------
+Vehicle: 1 --ROUTE--> [0 16 5 3 0] --distance--> 126.57000000000001 km --COST--> 2693.2204  --Total Time: 122.5314  ---RemainingCapacity-- 0  ---Capacity-- 1982
+Vehicle: 2 --ROUTE--> [0 9 7 6 0] --distance--> 208.53000000000003 km --COST--> 4219.8037  --Total Time: 124.17060000000001  ---RemainingCapacity-- 0  ---Capacity-- 2826      
+Vehicle: 3 --ROUTE--> [0 8 4 0] --distance--> 196.72 km --COST--> 3991.9888  --Total Time: 93.9344  ---RemainingCapacity-- 0  ---Capacity-- 8254
+Vehicle: 4 --ROUTE--> [0 2 0] --distance--> 73.84 km --COST--> 1874.9048  --Total Time: 61.4768  ---RemainingCapacity-- 0  ---Capacity-- 3308
+Vehicle: 5 --ROUTE--> [0 15 0] --distance--> 196.9 km --COST--> 4670.828  --Total Time: 63.938  ---RemainingCapacity-- 0  ---Capacity-- 5398
+Vehicle: 1 --ROUTE--> [0 11 12 1 0] --distance--> 258.8 km --COST--> 5300.796  --Total Time: 125.176  ---RemainingCapacity-- 0  ---Capacity-- 2931
+Vehicle: 2 --ROUTE--> [0 10 13 14 0] --distance--> 304.41999999999996 km --COST--> 6069.5217999999995  --Total Time: 126.0884  ---RemainingCapacity-- 0  ---Capacity-- 3593    
+Vehicle: 3 --ROUTE--> [0 17 0] --distance--> 202.62 km --COST--> 4105.7998  --Total Time: 64.0524  ---RemainingCapacity-- 17297  ---Capacity-- 17297
+-------------
+All Routes:  [[0 16 5 3 0] [0 9 7 6 0] [0 8 4 0] [0 2 0] [0 15 0] [0 11 12 1 0] [0 10 13 14 0] [0 17 0]]  ---COST: 33321.3833   ---Total Time: 781.3679999999999
+ ------------------------------------------------------------Iteration: 6  ------------------------------------------------------------
+Vehicle: 1 --ROUTE--> [0 5 1 0] --distance--> 214.51999999999998 km --COST--> 4427.5944  --Total Time: 94.2904  ---RemainingCapacity-- 0  ---Capacity-- 6344
+Vehicle: 2 --ROUTE--> [0 17 4 0] --distance--> 231.19 km --COST--> 4656.9151  --Total Time: 94.6238  ---RemainingCapacity-- 0  ---Capacity-- 8586
+Vehicle: 3 --ROUTE--> [0 10 2 3 0] --distance--> 119 km --COST--> 2492.7699999999995  --Total Time: 122.38  ---RemainingCapacity-- 0  ---Capacity-- 851
+Vehicle: 4 --ROUTE--> [0 16 11 0] --distance--> 120.44 km --COST--> 2933.6567999999997  --Total Time: 92.4088  ---RemainingCapacity-- 0  ---Capacity-- 2188
+Vehicle: 5 --ROUTE--> [0 13 15 0] --distance--> 261.94 km --COST--> 6148.5368  --Total Time: 95.2388  ---RemainingCapacity-- 0  ---Capacity-- 345
+Vehicle: 1 --ROUTE--> [0 14 9 8 0] --distance--> 321.61 km --COST--> 6539.4092  --Total Time: 126.4322  ---RemainingCapacity-- 0  ---Capacity-- 627
+Vehicle: 2 --ROUTE--> [0 12 7 6 0] --distance--> 223.3 km --COST--> 4504.717000000001  --Total Time: 124.466  ---RemainingCapacity-- 0  ---Capacity-- 3039
+-------------
+All Routes:  [[0 5 1 0] [0 17 4 0] [0 10 2 3 0] [0 16 11 0] [0 13 15 0] [0 14 9 8 0] [0 12 7 6 0]]  ---COST: 32295.379300000004   ---Total Time: 749.8399999999999
+ ------------------------------------------------------------Iteration: 7  ------------------------------------------------------------
+Vehicle: 1 --ROUTE--> [0 6 15 11 0] --distance--> 264.18 km --COST--> 5406.8896  --Total Time: 125.2836  ---RemainingCapacity-- 0  ---Capacity-- 2126
+Vehicle: 2 --ROUTE--> [0 7 9 8 0] --distance--> 175.6 km --COST--> 3584.584  --Total Time: 123.512  ---RemainingCapacity-- 0  ---Capacity-- 4103
+Vehicle: 3 --ROUTE--> [0 14 13 10 0] --distance--> 304.41999999999996 km --COST--> 6069.5217999999995  --Total Time: 126.0884  ---RemainingCapacity-- 0  ---Capacity-- 3308    
+Vehicle: 4 --ROUTE--> [0 17 0] --distance--> 202.62 km --COST--> 4800.7864  --Total Time: 64.0524  ---RemainingCapacity-- 0  ---Capacity-- 4758
+Vehicle: 5 --ROUTE--> [0 12 16 0] --distance--> 138.06 km --COST--> 3333.9831999999997  --Total Time: 92.7612  ---RemainingCapacity-- 0  ---Capacity-- 1427
+Vehicle: 1 --ROUTE--> [0 3 5 0] --distance--> 52.41 km --COST--> 1230.7851999999998  --Total Time: 91.0482  ---RemainingCapacity-- 0  ---Capacity-- 6304
+Vehicle: 2 --ROUTE--> [0 1 4 0] --distance--> 355.7 km --COST--> 7058.713  --Total Time: 97.114  ---RemainingCapacity-- 0  ---Capacity-- 7716
+Vehicle: 3 --ROUTE--> [0 2 0] --distance--> 73.84 km --COST--> 1621.6336  --Total Time: 61.4768  ---RemainingCapacity-- 15847  ---Capacity-- 15847
+-------------
+All Routes:  [[0 6 15 11 0] [0 7 9 8 0] [0 14 13 10 0] [0 17 0] [0 12 16 0] [0 3 5 0] [0 1 4 0] [0 2 0]]  ---COST: 33501.4168   ---Total Time: 781.3366000000001
+ ------------------------------------------------------------Iteration: 8  ------------------------------------------------------------
+Vehicle: 1 --ROUTE--> [0 12 2 0] --distance--> 122.63000000000001 km --COST--> 2615.5236000000004  --Total Time: 92.4526  ---RemainingCapacity-- 0  ---Capacity-- 6911
+Vehicle: 2 --ROUTE--> [0 9 4 6 0] --distance--> 208.95 km --COST--> 4227.9055  --Total Time: 124.179  ---RemainingCapacity-- 0  ---Capacity-- 1732
+Vehicle: 3 --ROUTE--> [0 5 3 11 16 0] --distance--> 162.07 km --COST--> 3323.5903  --Total Time: 153.2414  ---RemainingCapacity-- 0  ---Capacity-- 1041
+Vehicle: 4 --ROUTE--> [0 17 0] --distance--> 202.62 km --COST--> 4800.7864  --Total Time: 64.0524  ---RemainingCapacity-- 0  ---Capacity-- 4758
+Vehicle: 5 --ROUTE--> [0 10 0] --distance--> 82 km --COST--> 2060.3  --Total Time: 61.64  ---RemainingCapacity-- 0  ---Capacity-- 3292
+Vehicle: 1 --ROUTE--> [0 14 13 15 0] --distance--> 290.62 km --COST--> 5928.2864  --Total Time: 125.8124  ---RemainingCapacity-- 0  ---Capacity-- 1795
+Vehicle: 2 --ROUTE--> [0 1 8 7 0] --distance--> 360.26000000000005 km --COST--> 7146.675400000001  --Total Time: 127.2052  ---RemainingCapacity-- 0  ---Capacity-- 2451        
+-------------
+All Routes:  [[0 12 2 0] [0 9 4 6 0] [0 5 3 11 16 0] [0 17 0] [0 10 0] [0 14 13 15 0] [0 1 8 7 0]]  ---COST: 30694.8476   ---Total Time: 748.583
+ ------------------------------------------------------------Iteration: 9  ------------------------------------------------------------
+Vehicle: 1 --ROUTE--> [0 12 1 16 0] --distance--> 233.35999999999999 km --COST--> 4799.1192  --Total Time: 124.6672  ---RemainingCapacity-- 0  ---Capacity-- 3169
+Vehicle: 2 --ROUTE--> [0 6 17 15 0] --distance--> 259.78000000000003 km --COST--> 5208.416200000001  --Total Time: 125.1956  ---RemainingCapacity-- 0  ---Capacity-- 4278      
+Vehicle: 3 --ROUTE--> [0 7 13 14 0] --distance--> 296.32 km --COST--> 5913.2728  --Total Time: 125.9264  ---RemainingCapacity-- 0  ---Capacity-- 3180
+Vehicle: 4 --ROUTE--> [0 11 5 0] --distance--> 101.21999999999998 km --COST--> 2496.9784  --Total Time: 92.0244  ---RemainingCapacity-- 0  ---Capacity-- 46
+Vehicle: 5 --ROUTE--> [0 4 0] --distance--> 160.36 km --COST--> 3840.6392000000005  --Total Time: 63.2072  ---RemainingCapacity-- 0  ---Capacity-- 2070
+Vehicle: 1 --ROUTE--> [0 2 9 8 0] --distance--> 133.49 km --COST--> 2829.6827999999996  --Total Time: 122.6698  ---RemainingCapacity-- 0  ---Capacity-- 339
+Vehicle: 2 --ROUTE--> [0 3 10 0] --distance--> 102.6 km --COST--> 2176.4139999999998  --Total Time: 92.052  ---RemainingCapacity-- 8898  ---Capacity-- 8898
+-------------
+All Routes:  [[0 12 1 16 0] [0 6 17 15 0] [0 7 13 14 0] [0 11 5 0] [0 4 0] [0 2 9 8 0] [0 3 10 0]]  ---COST: 27856.302600000003   ---Total Time: 745.7426
+ ------------------------------------------------------------Iteration: 10  ------------------------------------------------------------
+Vehicle: 1 --ROUTE--> [0 11 3 5 0] --distance--> 104.07 km --COST--> 2249.5203999999994  --Total Time: 122.0814  ---RemainingCapacity-- 0  ---Capacity-- 1744
+Vehicle: 2 --ROUTE--> [0 16 2 8 0] --distance--> 195.23 km --COST--> 3963.2466999999997  --Total Time: 123.9046  ---RemainingCapacity-- 0  ---Capacity-- 5451
+Vehicle: 3 --ROUTE--> [0 15 6 7 0] --distance--> 213.28 km --COST--> 4311.4312  --Total Time: 124.2656  ---RemainingCapacity-- 0  ---Capacity-- 2403
+Vehicle: 4 --ROUTE--> [0 14 0] --distance--> 285.32 km --COST--> 6679.7303999999995  --Total Time: 65.7064  ---RemainingCapacity-- 0  ---Capacity-- 3596
+Vehicle: 5 --ROUTE--> [0 13 9 0] --distance--> 256.66 km --COST--> 6028.5752  --Total Time: 95.1332  ---RemainingCapacity-- 0  ---Capacity-- 483
+Vehicle: 1 --ROUTE--> [0 12 1 17 0] --distance--> 434.56 km --COST--> 8766.7832  --Total Time: 128.6912  ---RemainingCapacity-- 0  ---Capacity-- 1179
+Vehicle: 2 --ROUTE--> [0 4 10 0] --distance--> 200.74 km --COST--> 4069.5346  --Total Time: 94.0148  ---RemainingCapacity-- 0  ---Capacity-- 7124
+-------------
+All Routes:  [[0 11 3 5 0] [0 16 2 8 0] [0 15 6 7 0] [0 14 0] [0 13 9 0] [0 12 1 17 0] [0 4 10 0]]  ---COST: 36660.6017   ---Total Time: 753.7972
+ ------------------------------------------------------------Iteration: 11  ------------------------------------------------------------
+Vehicle: 1 --ROUTE--> [0 10 16 15 0] --distance--> 365.75 km --COST--> 7409.849999999999  --Total Time: 127.315  ---RemainingCapacity-- 0  ---Capacity-- 2226
+Vehicle: 2 --ROUTE--> [0 7 17 14 0] --distance--> 304.2 km --COST--> 6065.277999999999  --Total Time: 126.084  ---RemainingCapacity-- 0  ---Capacity-- 2206
+Vehicle: 3 --ROUTE--> [0 12 11 13 9 0] --distance--> 331.56 km --COST--> 6593.0524  --Total Time: 156.6312  ---RemainingCapacity-- 0  ---Capacity-- 3149
+Vehicle: 4 --ROUTE--> [0 2 0] --distance--> 73.84 km --COST--> 1874.9048  --Total Time: 61.4768  ---RemainingCapacity-- 0  ---Capacity-- 3308
+Vehicle: 5 --ROUTE--> [0 4 0] --distance--> 160.36 km --COST--> 3840.6392000000005  --Total Time: 63.2072  ---RemainingCapacity-- 0  ---Capacity-- 2070
+Vehicle: 1 --ROUTE--> [0 6 8 0] --distance--> 225.54 km --COST--> 4644.9088  --Total Time: 94.5108  ---RemainingCapacity-- 0  ---Capacity-- 5995
+Vehicle: 2 --ROUTE--> [0 3 5 1 0] --distance--> 222.45 km --COST--> 4488.3205  --Total Time: 124.449  ---RemainingCapacity-- 0  ---Capacity-- 3026
+-------------
+All Routes:  [[0 10 16 15 0] [0 7 17 14 0] [0 12 11 13 9 0] [0 2 0] [0 4 0] [0 6 8 0] [0 3 5 1 0]]  ---COST: 35508.7337   ---Total Time: 753.6740000000001
+ ------------------------------------------------------------Iteration: 12  ------------------------------------------------------------
+Vehicle: 1 --ROUTE--> [0 1 5 0] --distance--> 214.52 km --COST--> 4427.5944  --Total Time: 94.2904  ---RemainingCapacity-- 0  ---Capacity-- 6344
+Vehicle: 2 --ROUTE--> [0 4 7 0] --distance--> 160.36 km --COST--> 3290.6044  --Total Time: 93.2072  ---RemainingCapacity-- 0  ---Capacity-- 6996
+Vehicle: 3 --ROUTE--> [0 11 3 2 0] --distance--> 153.32 km --COST--> 3154.8027999999995  --Total Time: 123.0664  ---RemainingCapacity-- 0  ---Capacity-- 4065
+Vehicle: 4 --ROUTE--> [0 15 0] --distance--> 196.9 km --COST--> 4670.828  --Total Time: 63.938  ---RemainingCapacity-- 0  ---Capacity-- 5402
+Vehicle: 5 --ROUTE--> [0 9 12 0] --distance--> 118.16999999999999 km --COST--> 2882.0823999999993  --Total Time: 92.3634  ---RemainingCapacity-- 0  ---Capacity-- 219
+Vehicle: 1 --ROUTE--> [0 8 13 14 0] --distance--> 295.9 km --COST--> 6032.407999999999  --Total Time: 125.918  ---RemainingCapacity-- 0  ---Capacity-- 1104
+Vehicle: 2 --ROUTE--> [0 10 16 6 0] --distance--> 367.42 km --COST--> 7284.7918  --Total Time: 127.3484  ---RemainingCapacity-- 0  ---Capacity-- 4162
+Vehicle: 3 --ROUTE--> [0 17 0] --distance--> 202.62 km --COST--> 4105.7998  --Total Time: 64.0524  ---RemainingCapacity-- 17297  ---Capacity-- 17297
+-------------
+All Routes:  [[0 1 5 0] [0 4 7 0] [0 11 3 2 0] [0 15 0] [0 9 12 0] [0 8 13 14 0] [0 10 16 6 0] [0 17 0]]  ---COST: 36243.431599999996   ---Total Time: 784.1842
+ ------------------------------------------------------------Iteration: 13  ------------------------------------------------------------
+Vehicle: 1 --ROUTE--> [0 5 8 17 0] --distance--> 230.99 km --COST--> 4752.3828  --Total Time: 124.6198  ---RemainingCapacity-- 0  ---Capacity-- 855
+Vehicle: 2 --ROUTE--> [0 4 15 14 0] --distance--> 301.16999999999996 km --COST--> 6006.829299999999  --Total Time: 126.0234  ---RemainingCapacity-- 0  ---Capacity-- 1756      
+Vehicle: 3 --ROUTE--> [0 1 16 13 12 0] --distance--> 485.09 km --COST--> 9554.6461  --Total Time: 159.7018  ---RemainingCapacity-- 0  ---Capacity-- 1735
+Vehicle: 4 --ROUTE--> [0 9 11 0] --distance--> 137.34 km --COST--> 3317.6247999999996  --Total Time: 92.7468  ---RemainingCapacity-- 0  ---Capacity-- 980
+Vehicle: 5 --ROUTE--> [0 2 0] --distance--> 73.84 km --COST--> 1874.9048  --Total Time: 61.4768  ---RemainingCapacity-- 0  ---Capacity-- 3304
+Vehicle: 1 --ROUTE--> [0 10 7 0] --distance--> 173.49 km --COST--> 3618.4827999999998  --Total Time: 93.4698  ---RemainingCapacity-- 0  ---Capacity-- 4314
+Vehicle: 2 --ROUTE--> [0 3 6 0] --distance--> 238.11 km --COST--> 4790.4019  --Total Time: 94.7622  ---RemainingCapacity-- 9036  ---Capacity-- 9036
+-------------
+All Routes:  [[0 5 8 17 0] [0 4 15 14 0] [0 1 16 13 12 0] [0 9 11 0] [0 2 0] [0 10 7 0] [0 3 6 0]]  ---COST: 34507.0525   ---Total Time: 752.8006
+ ------------------------------------------------------------Iteration: 14  ------------------------------------------------------------
+Vehicle: 1 --ROUTE--> [0 6 16 13 0] --distance--> 553.2 km --COST--> 11106.364  --Total Time: 131.064  ---RemainingCapacity-- 0  ---Capacity-- 2979
+Vehicle: 2 --ROUTE--> [0 17 11 2 0] --distance--> 332.57 km --COST--> 6612.5353  --Total Time: 126.6514  ---RemainingCapacity-- 0  ---Capacity-- 5260
+Vehicle: 3 --ROUTE--> [0 5 3 7 0] --distance--> 180.34 km --COST--> 3676.0186000000003  --Total Time: 123.6068  ---RemainingCapacity-- 0  ---Capacity-- 2021
+Vehicle: 4 --ROUTE--> [0 12 9 0] --distance--> 118.17 km --COST--> 2882.0824000000002  --Total Time: 92.3634  ---RemainingCapacity-- 0  ---Capacity-- 223
+Vehicle: 5 --ROUTE--> [0 1 0] --distance--> 196.9 km --COST--> 4670.828  --Total Time: 63.938  ---RemainingCapacity-- 0  ---Capacity-- 3884
+Vehicle: 1 --ROUTE--> [0 14 15 8 0] --distance--> 309.49 km --COST--> 6300.4028  --Total Time: 126.1898  ---RemainingCapacity-- 0  ---Capacity-- 489
+Vehicle: 2 --ROUTE--> [0 4 10 0] --distance--> 200.74 km --COST--> 4069.5346  --Total Time: 94.0148  ---RemainingCapacity-- 0  ---Capacity-- 7124
+-------------
+All Routes:  [[0 6 16 13 0] [0 17 11 2 0] [0 5 3 7 0] [0 12 9 0] [0 1 0] [0 14 15 8 0] [0 4 10 0]]  ---COST: 39909.545699999995   ---Total Time: 757.8282

@@ -1,22 +1,18 @@
 package models
 
-type Graph map[int]map[int]int
-
-type Node struct {
-	Id          int
-	Demand      int
-	ServiceTime int
-	Distance    []float64
+type Compartment struct {
+	Id       int
+	Capacity int
 }
 
 type Ant struct {
 	Id                int
 	Visited           []bool
 	CurrentNode       int
-	Capacity          int
+	Capacity          []Compartment
 	AverageSpeed      float64
 	FixedCost         float64
 	VariableCost      float64
-	RemainingCapacity int
+	RemainingCapacity []Compartment
 	Route             []int
 }

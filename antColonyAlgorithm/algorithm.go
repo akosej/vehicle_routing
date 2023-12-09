@@ -1,6 +1,7 @@
 package antcolonyalgorithm
 
 import (
+	"fmt"
 	"math/rand"
 	"routng/models"
 	"time"
@@ -74,7 +75,7 @@ func SelectNextNode(ant *models.Ant, pheromones [][]float64, nodes []models.Node
 	selectedNodes := make([]int, 0)
 	selectedCapacity := 0
 
-	for selectedCapacity <= ant.RemainingCapacity {
+	for selectedCapacity <= ant.RemainingCapacity[0].Capacity {
 		// Generar un número aleatorio entre 0 y 1
 		rand.Seed(time.Now().UnixNano())
 		SumPro := 0.0
@@ -115,9 +116,9 @@ func SelectNextNode(ant *models.Ant, pheromones [][]float64, nodes []models.Node
 
 		// Si la capacidad seleccionada más la demanda del nodo seleccionado es menor o igual a la capacidad restante de la hormiga
 		// y la demanda del nodo seleccionado es mayor que 0
-		if selectedCapacity+nodes[selectedNode].Demand <= ant.RemainingCapacity && nodes[selectedNode].Demand > 0 {
+		if selectedCapacity+nodes[selectedNode].Demand[0].Demand <= ant.RemainingCapacity[0].Capacity && nodes[selectedNode].Demand[0].Demand > 0 {
 			// Se actualiza la capacidad seleccionada, se marca el nodo como visitado y se agrega el nodo a los nodos seleccionados
-			selectedCapacity += nodes[selectedNode].Demand
+			selectedCapacity += nodes[selectedNode].Demand[0].Demand
 			ant.Visited[selectedNode] = true
 			selectedNodes = append(selectedNodes, selectedNode)
 		}
@@ -127,7 +128,7 @@ func SelectNextNode(ant *models.Ant, pheromones [][]float64, nodes []models.Node
 
 	if len(selectedNodes) > 0 {
 
-		ant.Capacity -= nodes[selectedNodes[0]].Demand
+		ant.Capacity[0].Capacity -= nodes[selectedNodes[0]].Demand[0].Demand
 		ant.CurrentNode = selectedNodes[0]
 		return selectedNodes[0]
 	}
@@ -140,8 +141,8 @@ func GenerateRoute(nodes []models.Node, ants []models.Ant, NumNodes, startNode i
 	// Generar nuevas rutas con los nodos no visitados
 	for i := range ants {
 		ant := &ants[i]
-
-		if ant.RemainingCapacity <= 0 {
+		// TODO Hacer el ciclo para iterar sobre los compartimientos
+		if ant.RemainingCapacity[0].Capacity <= 0 {
 			// Si la capacidad restante de la hormiga es menor o igual a cero,
 			// se agrega el nodo inicial a la ruta de la hormiga y se continúa con la siguiente iteración.
 			ant.Route = append(ant.Route, startNode)
@@ -152,11 +153,11 @@ func GenerateRoute(nodes []models.Node, ants []models.Ant, NumNodes, startNode i
 		totalDemand := 0
 		for i, value := range remainingVisited {
 			if !value {
-				totalDemand += nodes[i].Demand
+				totalDemand += nodes[i].Demand[0].Demand
 			}
 		}
-
-		for ant.RemainingCapacity > 0 && totalDemand > 0 {
+		//
+		for ant.RemainingCapacity[0].Capacity > 0 && totalDemand > 0 {
 
 			ant.CurrentNode = SelectNextNode(ant, pheromones, nodes, remainingVisited, NumNodes)
 			if ant.CurrentNode == startNode {
@@ -170,19 +171,20 @@ func GenerateRoute(nodes []models.Node, ants []models.Ant, NumNodes, startNode i
 					ant.Visited[ant.CurrentNode] = true
 					remainingVisited[ant.CurrentNode] = true
 
-					demand := nodes[ant.CurrentNode].Demand
-
+					demand := nodes[ant.CurrentNode].Demand[0].Demand
+					product := nodes[ant.CurrentNode].Demand[0].Product
+					fmt.Println(product)
 					// fmt.Println(ant.RemainingCapacity, demand, nodes[ant.CurrentNode].Id, nodes[ant.CurrentNode].Demand)
 
-					if ant.RemainingCapacity >= demand {
+					if ant.RemainingCapacity[0].Capacity >= demand {
 						// Se actualiza la capacidad restante de la hormiga restando la demanda del nodo seleccionado.
 						ant.Route = append(ant.Route, ant.CurrentNode)
-						ant.RemainingCapacity -= demand
+						ant.RemainingCapacity[0].Capacity -= demand
 						totalDemand -= demand
 					}
 					// TODO Aqui hay que ver lo de los remanentes para ver la capacidad que le queda al vehiculo
-					if ant.RemainingCapacity < demand {
-						ant.RemainingCapacity = 0
+					if ant.RemainingCapacity[0].Capacity < demand {
+						ant.RemainingCapacity[0].Capacity = 0
 					}
 				}
 			}

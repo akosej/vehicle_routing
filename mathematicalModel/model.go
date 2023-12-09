@@ -1,6 +1,8 @@
 package mathematicalmodel
 
-import "routng/models"
+import (
+	"routng/models"
+)
 
 // Sum of distances and service times
 func SumDistanceAndServicesTime(route []int, nodes []models.Node) (float64, float64) {
@@ -33,5 +35,5 @@ func CostTarget(distance, variable_cost, fixed_cost float64) float64 {
 // El tiempo de viaje es igual al tiempo por unidad de distancia * distancia. El tiempo de servicio es un valor fijo en cada
 // nodo que establece el tiempo que se tarda cualquier vehículo en serviciar al cliente
 func TimeTarget(averageSpeed, distance, serviceTime float64) float64 {
-	return ((1 / averageSpeed) * distance) + serviceTime
+	return ((60 / averageSpeed) * distance) + serviceTime
 }

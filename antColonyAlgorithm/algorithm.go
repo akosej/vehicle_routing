@@ -142,12 +142,16 @@ func GenerateRoute(nodes []models.Node, ants []models.Ant, NumNodes, startNode i
 	for i := range ants {
 		ant := &ants[i]
 		// TODO Hacer el ciclo para iterar sobre los compartimientos
-		if ant.RemainingCapacity[0].Capacity <= 0 {
-			// Si la capacidad restante de la hormiga es menor o igual a cero,
-			// se agrega el nodo inicial a la ruta de la hormiga y se continúa con la siguiente iteración.
-			ant.Route = append(ant.Route, startNode)
-			continue
-		}
+		// for _, capCop := range ant.Capacity {
+		// fmt.Println(capCop.Capacity, "-- v ", ant.Id)
+		// }
+
+		// if ant.RemainingCapacity[0].Capacity <= 0 {
+		// 	// Si la capacidad restante de la hormiga es menor o igual a cero,
+		// 	// se agrega el nodo inicial a la ruta de la hormiga y se continúa con la siguiente iteración.
+		// 	ant.Route = append(ant.Route, startNode)
+		// 	continue
+		// }
 
 		// Seleccionar el siguiente nodo que aún no se haya visitado
 		totalDemand := 0
@@ -157,38 +161,41 @@ func GenerateRoute(nodes []models.Node, ants []models.Ant, NumNodes, startNode i
 			}
 		}
 		//
-		for ant.RemainingCapacity[0].Capacity > 0 && totalDemand > 0 {
+		for _, cap := range ant.RemainingCapacity {
 
-			ant.CurrentNode = SelectNextNode(ant, pheromones, nodes, remainingVisited, NumNodes)
-			if ant.CurrentNode == startNode {
-				// Si el siguiente nodo seleccionado es el nodo inicial,
-				// se agrega el nodo inicial a la ruta de la hormiga.
-				ant.Route = append(ant.Route, startNode)
-			} else {
-				// Si el siguiente nodo seleccionado no es el nodo inicial,
-				// se marca como visitado tanto en la hormiga como en la lista de nodos no visitados.
-				if !remainingVisited[ant.CurrentNode] {
-					ant.Visited[ant.CurrentNode] = true
-					remainingVisited[ant.CurrentNode] = true
+			for cap.Capacity > 0 && totalDemand > 0 {
 
-					demand := nodes[ant.CurrentNode].Demand[0].Demand
-					product := nodes[ant.CurrentNode].Demand[0].Product
-					fmt.Println(product)
-					// fmt.Println(ant.RemainingCapacity, demand, nodes[ant.CurrentNode].Id, nodes[ant.CurrentNode].Demand)
+				ant.CurrentNode = SelectNextNode(ant, pheromones, nodes, remainingVisited, NumNodes)
+				if ant.CurrentNode == startNode {
+					// Si el siguiente nodo seleccionado es el nodo inicial,
+					// se agrega el nodo inicial a la ruta de la hormiga.
+					ant.Route = append(ant.Route, startNode)
+				} else {
+					// Si el siguiente nodo seleccionado no es el nodo inicial,
+					// se marca como visitado tanto en la hormiga como en la lista de nodos no visitados.
+					if !remainingVisited[ant.CurrentNode] {
+						ant.Visited[ant.CurrentNode] = true
+						remainingVisited[ant.CurrentNode] = true
+						fmt.Println(nodes[ant.CurrentNode].Demand[0].Demand)
+						demand := nodes[ant.CurrentNode].Demand[0].Demand
+						product := nodes[ant.CurrentNode].Demand[0].Product
+						fmt.Println(product)
+						// fmt.Println(ant.RemainingCapacity, demand, nodes[ant.CurrentNode].Id, nodes[ant.CurrentNode].Demand)
 
-					if ant.RemainingCapacity[0].Capacity >= demand {
-						// Se actualiza la capacidad restante de la hormiga restando la demanda del nodo seleccionado.
-						ant.Route = append(ant.Route, ant.CurrentNode)
-						ant.RemainingCapacity[0].Capacity -= demand
-						totalDemand -= demand
-					}
-					// TODO Aqui hay que ver lo de los remanentes para ver la capacidad que le queda al vehiculo
-					if ant.RemainingCapacity[0].Capacity < demand {
-						ant.RemainingCapacity[0].Capacity = 0
+						if cap.Capacity >= demand {
+							// Se actualiza la capacidad restante de la hormiga restando la demanda del nodo seleccionado.
+							ant.Route = append(ant.Route, ant.CurrentNode)
+							cap.Capacity -= demand
+							totalDemand -= demand
+						}
+						// TODO Aqui hay que ver lo de los remanentes para ver la capacidad que le queda al vehiculo
+						if cap.Capacity < demand {
+							cap.Capacity = 0
+						}
 					}
 				}
-			}
 
+			}
 		}
 
 	}

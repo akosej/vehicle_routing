@@ -45,7 +45,7 @@ func main() {
 		}
 		NumNodes := 18
 		ants := []models.Ant{ // Se crea un slice de estructuras Ant
-			{Id: 1, AverageSpeed: 50, Visited: make([]bool, NumNodes), CurrentNode: startNode, Route: []int{startNode}, Capacity: []models.Compartment{{Id: 1, Capacity: 100}}, RemainingCapacity: []models.Compartment{{Id: 1, Capacity: 100}}, FixedCost: 197.26, VariableCost: 19.72},
+			{Id: 1, AverageSpeed: 50, Visited: make([]bool, NumNodes), CurrentNode: startNode, Route: []int{startNode}, Capacity: []models.Compartment{{Id: 1, Capacity: 100}, {Id: 2, Capacity: 200}}, RemainingCapacity: []models.Compartment{{Id: 1, Capacity: 100}, {Id: 2, Capacity: 200}}, FixedCost: 197.26, VariableCost: 19.72},
 			{Id: 2, AverageSpeed: 50, Visited: make([]bool, NumNodes), CurrentNode: startNode, Route: []int{startNode}, Capacity: []models.Compartment{{Id: 1, Capacity: 100}}, RemainingCapacity: []models.Compartment{{Id: 1, Capacity: 100}}, FixedCost: 197.26, VariableCost: 19.29},
 			{Id: 3, AverageSpeed: 50, Visited: make([]bool, NumNodes), CurrentNode: startNode, Route: []int{startNode}, Capacity: []models.Compartment{{Id: 1, Capacity: 100}}, RemainingCapacity: []models.Compartment{{Id: 1, Capacity: 100}}, FixedCost: 197.26, VariableCost: 19.29},
 			{Id: 4, AverageSpeed: 50, Visited: make([]bool, NumNodes), CurrentNode: startNode, Route: []int{startNode}, Capacity: []models.Compartment{{Id: 1, Capacity: 100}}, RemainingCapacity: []models.Compartment{{Id: 1, Capacity: 100}}, FixedCost: 197.26, VariableCost: 22.72},
@@ -72,7 +72,7 @@ func main() {
 		remainingVisited := make([]bool, NumNodes) // Se crea un slice para almacenar los nodos no visitados
 		for containsFalse {
 			vehicles := []models.Ant{ // Se crea un slice de estructuras Ant
-				{Id: 1, AverageSpeed: 50, Visited: make([]bool, NumNodes), CurrentNode: startNode, Route: []int{startNode}, Capacity: []models.Compartment{{Id: 1, Capacity: 100}}, RemainingCapacity: []models.Compartment{{Id: 1, Capacity: 100}}, FixedCost: 197.26, VariableCost: 19.72},
+				{Id: 1, AverageSpeed: 50, Visited: make([]bool, NumNodes), CurrentNode: startNode, Route: []int{startNode}, Capacity: []models.Compartment{{Id: 1, Capacity: 100}, {Id: 2, Capacity: 200}}, RemainingCapacity: []models.Compartment{{Id: 1, Capacity: 100}, {Id: 2, Capacity: 200}}, FixedCost: 197.26, VariableCost: 19.72},
 				{Id: 2, AverageSpeed: 50, Visited: make([]bool, NumNodes), CurrentNode: startNode, Route: []int{startNode}, Capacity: []models.Compartment{{Id: 1, Capacity: 100}}, RemainingCapacity: []models.Compartment{{Id: 1, Capacity: 100}}, FixedCost: 197.26, VariableCost: 19.29},
 				{Id: 3, AverageSpeed: 50, Visited: make([]bool, NumNodes), CurrentNode: startNode, Route: []int{startNode}, Capacity: []models.Compartment{{Id: 1, Capacity: 100}}, RemainingCapacity: []models.Compartment{{Id: 1, Capacity: 100}}, FixedCost: 197.26, VariableCost: 19.29},
 				{Id: 4, AverageSpeed: 50, Visited: make([]bool, NumNodes), CurrentNode: startNode, Route: []int{startNode}, Capacity: []models.Compartment{{Id: 1, Capacity: 100}}, RemainingCapacity: []models.Compartment{{Id: 1, Capacity: 100}}, FixedCost: 197.26, VariableCost: 22.72},

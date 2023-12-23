@@ -11,7 +11,7 @@ import (
 )
 
 const (
-	NumIterations = 10
+	NumIterations = 1
 )
 
 func main() {

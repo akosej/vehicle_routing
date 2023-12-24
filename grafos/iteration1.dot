@@ -1,84 +1,116 @@
 digraph G {
-	node [style=filled, color="#b02808"] 0 5 3 0;
+	beautify=true
+	center=true
+	concentrate=true
+	node [colorscheme=oranges9] 
+	node [style=filled, color=1] 0 3 5 0;
 	subgraph clusterG0 {
 	label="V1" 
-	color="#b02808" 
+	color=1 
 	bgcolor=white
-	 5 3 }
+	 3 5 }
 
-	0 -> 5 [label="P#2"; color=red];
-	5 -> 3 [label="P#2"; color=red];
-	3 -> 0 [label="P#2"; color=red];
-	node [style=filled, color="#eaa8f5"] 0 8 6 9 0;
+	0 -> 3 [label="P#2"; color=red];
+	3 -> 5 [label="P#2"; color=red];
+	5 -> 0 [label="P#2"; color=red];
+	beautify=true
+	center=true
+	concentrate=true
+	node [colorscheme=oranges9] 
+	node [style=filled, color=2] 0 7 4 0;
 	subgraph clusterG1 {
 	label="V2" 
-	color="#eaa8f5" 
+	color=2 
 	bgcolor=white
-	 8 6 9 }
+	 7 4 }
 
-	0 -> 8 [label="P#2"; color=red];
-	8 -> 6 [label="P#2"; color=red];
-	6 -> 9 [label="P#2"; color=red];
-	9 -> 0 [label="P#2"; color=red];
-	node [style=filled, color="#4c5563"] 0 10 2 13 0;
+	0 -> 7 [label="P#2"; color=red];
+	7 -> 4 [label="P#2"; color=red];
+	4 -> 0 [label="P#2"; color=red];
+	beautify=true
+	center=true
+	concentrate=true
+	node [colorscheme=oranges9] 
+	node [style=filled, color=3] 0 8 2 9 0;
 	subgraph clusterG2 {
 	label="V3" 
-	color="#4c5563" 
+	color=3 
 	bgcolor=white
-	 10 2 13 }
+	 8 2 9 }
 
-	0 -> 10 [label="P#2"; color=red];
-	10 -> 2 [label="P#2"; color=red];
-	2 -> 13 [label="P#2"; color=red];
-	13 -> 0 [label="P#2"; color=red];
-	node [style=filled, color="#0250be"] 0 12 11 0;
+	0 -> 8 [label="P#2"; color=red];
+	8 -> 2 [label="P#2"; color=red];
+	2 -> 9 [label="P#2"; color=red];
+	9 -> 0 [label="P#2"; color=red];
+	beautify=true
+	center=true
+	concentrate=true
+	node [colorscheme=oranges9] 
+	node [style=filled, color=4] 0 10 0;
 	subgraph clusterG3 {
 	label="V4" 
-	color="#0250be" 
+	color=4 
 	bgcolor=white
-	 12 11 }
+	 10 }
 
-	0 -> 12 [label="P#2"; color=red];
-	12 -> 11 [label="P#2"; color=red];
-	11 -> 0 [label="P#2"; color=red];
-	node [style=filled, color="#93fc18"] 0 15 0;
+	0 -> 10 [label="P#2"; color=red];
+	10 -> 0 [label="P#2"; color=red];
+	beautify=true
+	center=true
+	concentrate=true
+	node [colorscheme=oranges9] 
+	node [style=filled, color=5] 0 11 12 0;
 	subgraph clusterG4 {
 	label="V5" 
-	color="#93fc18" 
+	color=5 
 	bgcolor=white
-	 15 }
+	 11 12 }
 
-	0 -> 15 [label="P#2"; color=red];
-	15 -> 0 [label="P#2"; color=red];
-	node [style=filled, color="#58f69d"] 0 4 7 0;
+	0 -> 11 [label="P#2"; color=red];
+	11 -> 12 [label="P#2"; color=red];
+	12 -> 0 [label="P#2"; color=red];
+	beautify=true
+	center=true
+	concentrate=true
+	node [colorscheme=oranges9] 
+	node [style=filled, color=6] 0 17 16 15 0;
 	subgraph clusterG5 {
 	label="V6" 
-	color="#58f69d" 
+	color=6 
 	bgcolor=white
-	 4 7 }
+	 17 16 15 }
 
-	0 -> 4 [label="P#2"; color=red];
-	4 -> 7 [label="P#2"; color=red];
-	7 -> 0 [label="P#2"; color=red];
-	node [style=filled, color="#3d15ce"] 0 16 1 17 0;
+	0 -> 17 [label="P#2"; color=red];
+	17 -> 16 [label="P#2"; color=red];
+	16 -> 15 [label="P#2"; color=red];
+	15 -> 0 [label="P#2"; color=red];
+	beautify=true
+	center=true
+	concentrate=true
+	node [colorscheme=oranges9] 
+	node [style=filled, color=7] 0 18 14 13 0;
 	subgraph clusterG6 {
 	label="V7" 
-	color="#3d15ce" 
+	color=7 
 	bgcolor=white
-	 16 1 17 }
-
-	0 -> 16 [label="P#2"; color=red];
-	16 -> 1 [label="P#2"; color=red];
-	1 -> 17 [label="P#2"; color=red];
-	17 -> 0 [label="P#2"; color=red];
-	node [style=filled, color="#27cca2"] 0 18 14 0;
-	subgraph clusterG7 {
-	label="V8" 
-	color="#27cca2" 
-	bgcolor=white
-	 18 14 }
+	 18 14 13 }
 
 	0 -> 18 [label="P#2"; color=red];
 	18 -> 14 [label="P#2"; color=red];
-	14 -> 0 [label="P#2"; color=red];
+	14 -> 13 [label="P#2"; color=red];
+	13 -> 0 [label="P#2"; color=red];
+	beautify=true
+	center=true
+	concentrate=true
+	node [colorscheme=oranges9] 
+	node [style=filled, color=8] 0 6 1 0;
+	subgraph clusterG7 {
+	label="V8" 
+	color=8 
+	bgcolor=white
+	 6 1 }
+
+	0 -> 6 [label="P#2"; color=red];
+	6 -> 1 [label="P#2"; color=red];
+	1 -> 0 [label="P#2"; color=red];
 }

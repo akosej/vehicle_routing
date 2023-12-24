@@ -63,17 +63,22 @@ func Grafo(routes [][]int, iteration int) {
 
 	for k, route := range routes {
 		rand.Seed(time.Now().UnixNano())
-		color := fmt.Sprintf("#%06x", rand.Intn(0xffffff))
-		time.Sleep(100 * time.Millisecond)
+		// color := fmt.Sprintf("#%06x", rand.Intn(0xffffff))
+		// time.Sleep(100 * time.Millisecond)
 		routeString := intArrayToString(route)
 		routeString = strings.Trim(fmt.Sprintf("%v", routeString), "[")
 		routeString = strings.Trim(fmt.Sprintf("%v", routeString), "]")
 
-		f.WriteString(fmt.Sprintf("\tnode [style=filled, color=\"%s\"] %s;\n", color, routeString))
+		f.WriteString(fmt.Sprintf("\tbeautify=true\n"))
+		f.WriteString(fmt.Sprintf("\tcenter=true\n"))
+		f.WriteString(fmt.Sprintf("\tconcentrate=true\n"))
+		f.WriteString(fmt.Sprintf("\tnode [colorscheme=oranges9] \n"))
+
+		f.WriteString(fmt.Sprintf("\tnode [style=filled, color=%d] %s;\n", k+1, routeString))
 
 		f.WriteString(fmt.Sprintf("\tsubgraph clusterG%d {\n", k))
 		f.WriteString(fmt.Sprintf("\tlabel=\"V%d\" \n", k+1))
-		f.WriteString(fmt.Sprintf("\tcolor=\"%s\" \n", color))
+		f.WriteString(fmt.Sprintf("\tcolor=%d \n", k+1))
 		f.WriteString(fmt.Sprintf("\tbgcolor=white\n"))
 		routeString = strings.Trim(fmt.Sprintf("%v", routeString), "0")
 		f.WriteString(fmt.Sprintf("\t%s", routeString))

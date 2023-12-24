@@ -1,0 +1,81 @@
+digraph finite_state_machine {
+	rankdir=LR;
+	size="8,5"
+
+	node [shape = doublecircle]; Deposito;
+	node [shape = circle];
+    node [color = red] 11 12 10 3 16 2 14 18 17;
+    node [color = blue] 9 8 13 15 4 18 6 10 7 4;
+    node [color = "#0ef6ee"] 6 17 14 1 5 3 8 2 ;
+    node [color = "#f6b80e"] 9 16;
+    node [color = "#c80ef6"] 7 15;
+    
+    // v1
+	Deposito -> 11 [label = "v1 p1"; color=red];
+	11 -> 12 [label = "v1 p1"; color=red];
+	12 -> 10 [label = "v1 p1"; color=red];
+	10 -> Deposito [label = "v1 p1"; color=red];
+    Deposito -> 3 [label = "v1 p1 2 ciclo"; color=red];
+	3 -> 16 [label = "v1 p1 2 ciclo"; color=red];
+	16 -> 2 [label = "v1 p1 2 ciclo"];
+	2 -> Deposito [label = "v1 2 ciclo"; color=red];
+    // ----------------
+    Deposito -> 12[label = "v1  p2"; color=red];
+	12 -> 11[label = "v1 p2"; color=red];
+	11 -> 14[label = "v1 p2"; color=red];
+	14 -> Deposito[label = "v1 p2"; color=red];
+    Deposito -> 18[label = "v1 p2 2 ciclo"; color=red];
+	18 -> 17[label = "v1 p2 2 ciclo"; color=red];
+	17 -> Deposito[label = "v1 p2 2 ciclo"; color=red];
+
+    // v2
+	Deposito -> 9 [label = "v2 p1"; color=blue];
+	9 -> 8[label = "v2 p1"; color=blue];
+	8 -> 13[label = "v2 p1"; color=blue];
+	13 -> 15[label = "v2 p1"; color=blue];
+	15 -> Deposito[label = "v2 p1"; color=blue];
+    Deposito -> 4[label = "v2 p1 2c"; color=blue];
+	4 -> 18[label = "v2 p1 2c"; color=blue];
+	18 -> Deposito[label = "v2 p1 2c"; color=blue];
+    // ------
+    Deposito -> 6[label = "v2 p2"; color=blue];
+	6 -> 13[label = "v2 p2"; color=blue];
+	13 -> 10[label = "v2 p2"; color=blue];
+	10 -> Deposito[label = "v2 p2"; color=blue];
+    Deposito -> 7[label = "v2 p2 2c"; color=blue];
+	7 -> 4[label = "v2 p2 2c"; color=blue];
+	4 -> Deposito[label = "v2 p2 2c"; color=blue];
+
+    // v3
+	Deposito -> 6[label = "v3 p1"; color="#0ef6ee"];
+	6 -> 17[label = "v3 p1"; color="#0ef6ee"];
+	17 -> 14[label = "v3 p1"; color="#0ef6ee"];
+	14 -> Deposito[label = "v3 p1"; color="#0ef6ee"];
+
+    Deposito -> 1[label = "v3 p1 2c"; color="#0ef6ee"];
+	1 -> Deposito[label = "v3 p1 2c"; color="#0ef6ee"];
+    // ----
+    Deposito -> 5[label = "v3 p2"; color="#0ef6ee"];
+	5 -> 3[label = "v3 p2"; color="#0ef6ee"];
+	3 -> 8[label = "v3 p2"; color="#0ef6ee"];
+	8 -> Deposito[label = "v3 p2"; color="#0ef6ee"];
+
+    Deposito -> 2[label = "v3 p2 2c"; color="#0ef6ee"];
+	2 -> 1[label = "v3 p2 2c"; color="#0ef6ee"];
+	1 -> Deposito[label = "v3 p2 2c"; color="#0ef6ee"];
+
+    // v4
+	Deposito -> 5[label = "v4 p1"; color="#f6b80e"];
+	5 -> Deposito[label = "v4 p1"; color="#f6b80e"];
+    
+    Deposito -> 9[label = "v4 p2"; color="#f6b80e"];
+	9 -> 16[label = "v4 p2"; color="#f6b80e"];
+	16 -> Deposito[label = "v4 p2"; color="#f6b80e"];
+    
+    // v5
+	Deposito -> 7 [label = "v5 p1"; color="#c80ef6"];
+	7 -> Deposito[label = "v5 p1"; color="#c80ef6"];
+    Deposito -> 15[label = "v5 p2"; color="#c80ef6"];
+	15 -> Deposito[label = "v5 p2"; color="#c80ef6"];
+    
+}

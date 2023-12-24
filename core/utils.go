@@ -2,11 +2,12 @@ package core
 
 import (
 	"fmt"
+	"math/rand"
 	"os"
 	"routng/models"
 	"strconv"
-
-	"github.com/awalterschulze/gographviz"
+	"strings"
+	"time"
 )
 
 func Print(nodes []models.Node, ants []models.Ant) {
@@ -40,64 +41,69 @@ func RemoveDuplicateNodesInRoute(route []int) []int {
 	return result // Devolver la ruta sin nodos duplicados
 }
 
-func Grafo(nodes []models.Node, ants []models.Ant, iteration int) {
-	// Generar la representación gráfica en formato DOT
-	// Generar la representación gráfica en formato DOT
-	// Restablecer las variables a sus valores iniciales
-	currentGraph := make(models.Graph)
-	graphAst := gographviz.NewGraph()
-	graphAst.SetDir(true)
-	graphAst.SetName("G")
+func Grafo(routes [][]int, iteration int) {
 
-	for _, ant := range ants {
-		route := ant.Route
+	dotFilename := "iteration" + strconv.Itoa(iteration) + ".dot"
+	f, err := os.Create("./grafos/" + dotFilename)
+	if err != nil {
+		fmt.Println("Error creating file:", err)
+		return
+	}
+	defer f.Close()
+
+	_, err = f.WriteString("digraph G {\n")
+	if err != nil {
+		fmt.Println("Error writing to file:", err)
+		return
+	}
+	lineColor := "blue"
+	if iteration == 1 {
+		lineColor = "red"
+	}
+
+	for k, route := range routes {
+		rand.Seed(time.Now().UnixNano())
+		color := fmt.Sprintf("#%06x", rand.Intn(0xffffff))
+		time.Sleep(100 * time.Millisecond)
+		routeString := intArrayToString(route)
+		routeString = strings.Trim(fmt.Sprintf("%v", routeString), "[")
+		routeString = strings.Trim(fmt.Sprintf("%v", routeString), "]")
+
+		f.WriteString(fmt.Sprintf("\tnode [style=filled, color=\"%s\"] %s;\n", color, routeString))
+
+		f.WriteString(fmt.Sprintf("\tsubgraph clusterG%d {\n", k))
+		f.WriteString(fmt.Sprintf("\tlabel=\"V%d\" \n", k+1))
+		f.WriteString(fmt.Sprintf("\tcolor=\"%s\" \n", color))
+		f.WriteString(fmt.Sprintf("\tbgcolor=white\n"))
+		routeString = strings.Trim(fmt.Sprintf("%v", routeString), "0")
+		f.WriteString(fmt.Sprintf("\t%s", routeString))
+		f.WriteString(fmt.Sprintf("}\n\n"))
+
 		for i := 0; i < len(route)-1; i++ {
 			from := route[i]
 			to := route[i+1]
-			if _, ok := currentGraph[from]; !ok {
-				currentGraph[from] = make(map[int]int)
-			}
-			currentGraph[from][to] = int(nodes[from].Distance[to])
-		}
-		// Agregar el retorno al nodo inicial
-		lastNode := route[len(route)-1]
-		if _, ok := currentGraph[lastNode]; !ok {
-			currentGraph[lastNode] = make(map[int]int)
-		}
-		currentGraph[lastNode][route[0]] = int(nodes[lastNode].Distance[route[0]])
-	}
-	// Agregar los nodos al grafo
-	for node := range currentGraph {
-		attrs := map[string]string{
-			"label": fmt.Sprintf("%d", node),
-		}
-		graphAst.AddNode("G", fmt.Sprintf("%d", node), attrs)
-	}
 
-	// Agregar las aristas al grafo
-	for from, connections := range currentGraph {
-		for to, distance := range connections {
-			attrs := map[string]string{
-				"label": fmt.Sprintf("%d", distance),
-			}
-			if from != to {
-				graphAst.AddEdge(fmt.Sprintf("%d", from), fmt.Sprintf("%d", to), true, attrs)
+			_, err := f.WriteString(fmt.Sprintf("\t%d -> %d [label=\"P#%d\"; color=%s];\n", from, to, iteration+1, lineColor))
+			if err != nil {
+				fmt.Println("Error writing to file:", err)
+				return
 			}
 		}
 	}
 
-	dot := graphAst.String()
-
-	// Restablecer las variables a sus valores iniciales
-	graphAst = gographviz.NewGraph()
-	graphAst.SetDir(true)
-	graphAst.SetName("G")
-
-	// Guardar la representación en un archivo temporal
-	dotFilename := "iteration" + strconv.Itoa(iteration) + ".dot"
-	err := os.WriteFile("./grafos/"+dotFilename, []byte(dot), 0644)
+	_, err = f.WriteString("}\n")
 	if err != nil {
-		fmt.Println("Error al guardar la representación DOT:", err)
+		fmt.Println("Error writing to file:", err)
 		return
 	}
+
+	fmt.Println("Graph created successfully.")
+}
+
+func intArrayToString(arr []int) string {
+	strArr := make([]string, len(arr))
+	for i, num := range arr {
+		strArr[i] = fmt.Sprintf("%d", num)
+	}
+	return fmt.Sprintf("%s", strArr)
 }

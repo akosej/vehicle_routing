@@ -1,0 +1,486 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<svg width="251pt" height="360pt" viewBox="0.00 0.00 250.92 360.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(.2878 .2878) rotate(0) translate(4 1247.0233)">
+<title>finite_state_machine</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-1247.0233 867.9477,-1247.0233 867.9477,4 -4,4"/>
+<!-- Deposito -->
+<g id="node1" class="node">
+<title>Deposito</title>
+<ellipse fill="none" stroke="#000000" cx="49.9029" cy="-614.3299" rx="45.8138" ry="45.8138"/>
+<ellipse fill="none" stroke="#000000" cx="49.9029" cy="-614.3299" rx="49.806" ry="49.806"/>
+<text text-anchor="middle" x="49.9029" y="-610.1299" font-family="Times,serif" font-size="14.00" fill="#000000">Deposito</text>
+</g>
+<!-- 11 -->
+<g id="node2" class="node">
+<title>11</title>
+<ellipse fill="none" stroke="#ff0000" cx="220.3756" cy="-1222.3299" rx="20.8887" ry="20.8887"/>
+<text text-anchor="middle" x="220.3756" y="-1218.1299" font-family="Times,serif" font-size="14.00" fill="#000000">11</text>
+</g>
+<!-- Deposito&#45;&gt;11 -->
+<g id="edge1" class="edge">
+<title>Deposito-&gt;11</title>
+<path fill="none" stroke="#ff0000" d="M52.9794,-664.2238C61.4474,-795.0343 86.5584,-1140.6378 117.8058,-1181.3299 135.0002,-1203.7214 166.338,-1213.9185 189.8667,-1218.5414"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="189.2774,-1221.9914 199.7279,-1220.249 190.4718,-1215.094 189.2774,-1221.9914"/>
+<text text-anchor="middle" x="141.9131" y="-1216.5299" font-family="Times,serif" font-size="14.00" fill="#000000">v1 p1</text>
+</g>
+<!-- 12 -->
+<g id="node3" class="node">
+<title>12</title>
+<ellipse fill="none" stroke="#ff0000" cx="401.7964" cy="-1197.3299" rx="20.8887" ry="20.8887"/>
+<text text-anchor="middle" x="401.7964" y="-1193.1299" font-family="Times,serif" font-size="14.00" fill="#000000">12</text>
+</g>
+<!-- Deposito&#45;&gt;12 -->
+<g id="edge9" class="edge">
+<title>Deposito-&gt;12</title>
+<path fill="none" stroke="#ff0000" d="M53.6845,-664.105C63.148,-783.0919 89.1583,-1076.6472 117.8058,-1110.3299 151.1029,-1149.4794 304.731,-1180.4095 371.109,-1192.1838"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="370.5284,-1195.6353 380.9813,-1193.9073 371.7323,-1188.7396 370.5284,-1195.6353"/>
+<text text-anchor="middle" x="220.3756" y="-1171.5299" font-family="Times,serif" font-size="14.00" fill="#000000">v1  p2</text>
+</g>
+<!-- 3 -->
+<g id="node5" class="node">
+<title>3</title>
+<ellipse fill="none" stroke="#ff0000" cx="401.7964" cy="-734.3299" rx="18" ry="18"/>
+<text text-anchor="middle" x="401.7964" y="-730.1299" font-family="Times,serif" font-size="14.00" fill="#000000">3</text>
+</g>
+<!-- Deposito&#45;&gt;3 -->
+<g id="edge5" class="edge">
+<title>Deposito-&gt;3</title>
+<path fill="none" stroke="#ff0000" d="M89.6405,-644.8901C98.6866,-651.3103 108.4066,-657.8041 117.8058,-663.3299 145.8178,-679.7982 153.0726,-684.4247 184.0204,-694.3299 250.2007,-715.5116 331.5014,-726.7237 373.5721,-731.4845"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="373.31,-734.9766 383.631,-732.5834 374.0703,-728.018 373.31,-734.9766"/>
+<text text-anchor="middle" x="220.3756" y="-717.5299" font-family="Times,serif" font-size="14.00" fill="#000000">v1 p1 2 ciclo</text>
+</g>
+<!-- 2 -->
+<g id="node7" class="node">
+<title>2</title>
+<ellipse fill="none" stroke="#ff0000" cx="717.6528" cy="-570.3299" rx="18" ry="18"/>
+<text text-anchor="middle" x="717.6528" y="-566.1299" font-family="Times,serif" font-size="14.00" fill="#000000">2</text>
+</g>
+<!-- Deposito&#45;&gt;2 -->
+<g id="edge41" class="edge">
+<title>Deposito-&gt;2</title>
+<path fill="none" stroke="#0ef6ee" d="M99.2097,-606.2178C105.4661,-605.2252 111.7837,-604.2407 117.8058,-603.3299 227.6976,-586.7092 254.5703,-576.2821 365.4412,-568.5299 397.6782,-566.2758 405.8359,-568.4762 438.1516,-568.5299 545.1777,-568.7077 571.9445,-567.7695 678.9593,-569.3299 682.3189,-569.3789 685.8422,-569.4469 689.337,-569.5246"/>
+<polygon fill="#0ef6ee" stroke="#0ef6ee" points="689.4607,-573.0286 699.5444,-569.7776 689.6342,-566.0308 689.4607,-573.0286"/>
+<text text-anchor="middle" x="401.7964" y="-573.5299" font-family="Times,serif" font-size="14.00" fill="#000000">v3 p2 2c</text>
+</g>
+<!-- 18 -->
+<g id="node9" class="node">
+<title>18</title>
+<ellipse fill="none" stroke="#ff0000" cx="567.5555" cy="-174.3299" rx="20.8887" ry="20.8887"/>
+<text text-anchor="middle" x="567.5555" y="-170.1299" font-family="Times,serif" font-size="14.00" fill="#000000">18</text>
+</g>
+<!-- Deposito&#45;&gt;18 -->
+<g id="edge13" class="edge">
+<title>Deposito-&gt;18</title>
+<path fill="none" stroke="#ff0000" d="M52.0716,-564.4479C58.3779,-431.0821 78.7847,-74.014 117.8058,-39.3299 247.1755,75.6612 471.3143,-92.946 544.0395,-153.8348"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="541.866,-156.5806 551.7591,-160.3723 546.3899,-151.2388 541.866,-156.5806"/>
+<text text-anchor="middle" x="311.086" y="-31.5299" font-family="Times,serif" font-size="14.00" fill="#000000">v1 p2 2 ciclo</text>
+</g>
+<!-- 9 -->
+<g id="node11" class="node">
+<title>9</title>
+<ellipse fill="none" stroke="#0000ff" cx="311.086" cy="-840.3299" rx="18" ry="18"/>
+<text text-anchor="middle" x="311.086" y="-836.1299" font-family="Times,serif" font-size="14.00" fill="#000000">9</text>
+</g>
+<!-- Deposito&#45;&gt;9 -->
+<g id="edge16" class="edge">
+<title>Deposito-&gt;9</title>
+<path fill="none" stroke="#0000ff" d="M57.2385,-663.9055C67.5254,-725.7812 88.3372,-826.197 117.8058,-848.3299 166.9459,-885.2375 244.5921,-865.2934 284.8828,-850.916"/>
+<polygon fill="#0000ff" stroke="#0000ff" points="286.1297,-854.1865 294.2812,-847.4187 283.6884,-847.626 286.1297,-854.1865"/>
+<text text-anchor="middle" x="141.9131" y="-871.5299" font-family="Times,serif" font-size="14.00" fill="#000000">v2 p1</text>
+</g>
+<!-- Deposito&#45;&gt;9 -->
+<g id="edge46" class="edge">
+<title>Deposito-&gt;9</title>
+<path fill="none" stroke="#f6b80e" d="M61.3871,-663.3644C74.1302,-713.515 95.8118,-786.6468 117.8058,-805.3299 142.2794,-826.1192 235.3479,-835.2627 282.8405,-838.644"/>
+<polygon fill="#f6b80e" stroke="#f6b80e" points="282.8426,-842.1519 293.0552,-839.332 283.3131,-835.1678 282.8426,-842.1519"/>
+<text text-anchor="middle" x="141.9131" y="-827.5299" font-family="Times,serif" font-size="14.00" fill="#000000">v4 p2</text>
+</g>
+<!-- 15 -->
+<g id="node14" class="node">
+<title>15</title>
+<ellipse fill="none" stroke="#0000ff" cx="843.2543" cy="-956.3299" rx="20.8887" ry="20.8887"/>
+<text text-anchor="middle" x="843.2543" y="-952.1299" font-family="Times,serif" font-size="14.00" fill="#000000">15</text>
+</g>
+<!-- Deposito&#45;&gt;15 -->
+<g id="edge51" class="edge">
+<title>Deposito-&gt;15</title>
+<path fill="none" stroke="#c80ef6" d="M55.5192,-664.0931C64.5671,-734.7629 84.7771,-858.9121 117.8058,-888.3299 118.7853,-889.2023 491.1951,-936.3299 492.5068,-936.3299 492.5068,-936.3299 492.5068,-936.3299 717.6528,-936.3299 750.4976,-936.3299 787.5793,-943.0824 812.8849,-948.7402"/>
+<polygon fill="#c80ef6" stroke="#c80ef6" points="812.4306,-952.2276 822.9625,-951.0751 814.0106,-945.4083 812.4306,-952.2276"/>
+<text text-anchor="middle" x="492.5068" y="-940.5299" font-family="Times,serif" font-size="14.00" fill="#000000">v5 p2</text>
+</g>
+<!-- 4 -->
+<g id="node15" class="node">
+<title>4</title>
+<ellipse fill="none" stroke="#0000ff" cx="401.7964" cy="-144.3299" rx="18" ry="18"/>
+<text text-anchor="middle" x="401.7964" y="-140.1299" font-family="Times,serif" font-size="14.00" fill="#000000">4</text>
+</g>
+<!-- Deposito&#45;&gt;4 -->
+<g id="edge21" class="edge">
+<title>Deposito-&gt;4</title>
+<path fill="none" stroke="#0000ff" d="M51.8876,-564.3009C56.6827,-469.3638 72.0994,-268.1005 117.8058,-218.3299 152.5012,-180.5494 308.3034,-156.4213 373.2407,-147.8417"/>
+<polygon fill="#0000ff" stroke="#0000ff" points="374.0882,-151.2614 383.5575,-146.5092 373.1915,-144.3191 374.0882,-151.2614"/>
+<text text-anchor="middle" x="220.3756" y="-189.5299" font-family="Times,serif" font-size="14.00" fill="#000000">v2 p1 2c</text>
+</g>
+<!-- 6 -->
+<g id="node16" class="node">
+<title>6</title>
+<ellipse fill="none" stroke="#0000ff" cx="492.5068" cy="-486.3299" rx="18" ry="18"/>
+<text text-anchor="middle" x="492.5068" y="-482.1299" font-family="Times,serif" font-size="14.00" fill="#000000">6</text>
+</g>
+<!-- Deposito&#45;&gt;6 -->
+<g id="edge24" class="edge">
+<title>Deposito-&gt;6</title>
+<path fill="none" stroke="#0000ff" d="M83.9764,-577.235C94.0913,-567.976 105.72,-558.8422 117.8058,-552.3299 234.6154,-489.3885 398.8217,-484.5872 464.1191,-485.4376"/>
+<polygon fill="#0000ff" stroke="#0000ff" points="464.3661,-488.9428 474.4303,-485.6318 464.498,-481.944 464.3661,-488.9428"/>
+<text text-anchor="middle" x="220.3756" y="-527.5299" font-family="Times,serif" font-size="14.00" fill="#000000">v2 p2</text>
+</g>
+<!-- Deposito&#45;&gt;6 -->
+<g id="edge31" class="edge">
+<title>Deposito-&gt;6</title>
+<path fill="none" stroke="#0ef6ee" d="M76.8579,-571.9121C100.4552,-539.5988 138.1071,-498.38 184.0204,-484.5299 283.5267,-454.513 409.4419,-471.0395 464.5458,-480.7935"/>
+<polygon fill="#0ef6ee" stroke="#0ef6ee" points="464.1259,-484.2749 474.5936,-482.6382 465.39,-477.3899 464.1259,-484.2749"/>
+<text text-anchor="middle" x="220.3756" y="-489.5299" font-family="Times,serif" font-size="14.00" fill="#000000">v3 p1</text>
+</g>
+<!-- 7 -->
+<g id="node17" class="node">
+<title>7</title>
+<ellipse fill="none" stroke="#0000ff" cx="220.3756" cy="-80.3299" rx="18" ry="18"/>
+<text text-anchor="middle" x="220.3756" y="-76.1299" font-family="Times,serif" font-size="14.00" fill="#000000">7</text>
+</g>
+<!-- Deposito&#45;&gt;7 -->
+<g id="edge28" class="edge">
+<title>Deposito-&gt;7</title>
+<path fill="none" stroke="#0000ff" d="M52.2252,-564.0799C58.8205,-432.4364 79.6964,-85.3177 117.8058,-51.5299 140.0424,-31.815 174.77,-48.1919 197.5501,-63.1223"/>
+<polygon fill="#0000ff" stroke="#0000ff" points="195.7139,-66.1076 205.9331,-68.9038 199.6881,-60.3451 195.7139,-66.1076"/>
+<text text-anchor="middle" x="141.9131" y="-56.5299" font-family="Times,serif" font-size="14.00" fill="#000000">v2 p2 2c</text>
+</g>
+<!-- Deposito&#45;&gt;7 -->
+<g id="edge49" class="edge">
+<title>Deposito-&gt;7</title>
+<path fill="none" stroke="#c80ef6" d="M51.0864,-564.1212C54.5804,-454.8281 67.993,-199.703 117.8058,-131.5299 131.8356,-112.329 144.7339,-118.9315 166.0204,-108.3299 175.6114,-103.5532 186.0894,-98.1903 195.2638,-93.4461"/>
+<polygon fill="#c80ef6" stroke="#c80ef6" points="196.9974,-96.4898 204.2609,-88.7766 193.7728,-90.2767 196.9974,-96.4898"/>
+<text text-anchor="middle" x="141.9131" y="-136.5299" font-family="Times,serif" font-size="14.00" fill="#000000">v5 p1</text>
+</g>
+<!-- 1 -->
+<g id="node18" class="node">
+<title>1</title>
+<ellipse fill="none" stroke="#0ef6ee" cx="843.2543" cy="-506.3299" rx="18" ry="18"/>
+<text text-anchor="middle" x="843.2543" y="-502.1299" font-family="Times,serif" font-size="14.00" fill="#000000">1</text>
+</g>
+<!-- Deposito&#45;&gt;1 -->
+<g id="edge35" class="edge">
+<title>Deposito-&gt;1</title>
+<path fill="none" stroke="#0ef6ee" d="M65.3566,-566.8575C76.2032,-540.367 93.2157,-508.7 117.8058,-488.3299 141.5811,-468.6348 153.7564,-473.4332 184.0204,-467.3299 303.072,-443.321 334.8286,-448.0467 456.1516,-442.5299 488.434,-441.062 497.0719,-436.7253 528.862,-442.5299 537.2748,-444.066 538.6329,-447.0027 546.862,-449.3299 643.8017,-476.7439 762.3024,-495.13 815.3062,-502.5867"/>
+<polygon fill="#0ef6ee" stroke="#0ef6ee" points="814.9142,-506.0657 825.3,-503.9716 815.8751,-499.132 814.9142,-506.0657"/>
+<text text-anchor="middle" x="492.5068" y="-447.5299" font-family="Times,serif" font-size="14.00" fill="#000000">v3 p1 2c</text>
+</g>
+<!-- 5 -->
+<g id="node19" class="node">
+<title>5</title>
+<ellipse fill="none" stroke="#0ef6ee" cx="220.3756" cy="-779.3299" rx="18" ry="18"/>
+<text text-anchor="middle" x="220.3756" y="-775.1299" font-family="Times,serif" font-size="14.00" fill="#000000">5</text>
+</g>
+<!-- Deposito&#45;&gt;5 -->
+<g id="edge37" class="edge">
+<title>Deposito-&gt;5</title>
+<path fill="none" stroke="#0ef6ee" d="M80.9094,-653.6087C91.7234,-665.7233 104.5038,-678.4588 117.8058,-688.3299 136.9026,-702.5011 149.0595,-694.8615 166.0204,-711.5299 178.7224,-724.0128 173.1372,-733.2331 184.0204,-747.3299 188.0669,-752.5712 193.0641,-757.616 198.0442,-762.0892"/>
+<polygon fill="#0ef6ee" stroke="#0ef6ee" points="195.8257,-764.797 205.7168,-768.5941 200.3525,-759.4577 195.8257,-764.797"/>
+<text text-anchor="middle" x="141.9131" y="-716.5299" font-family="Times,serif" font-size="14.00" fill="#000000">v3 p2</text>
+</g>
+<!-- Deposito&#45;&gt;5 -->
+<g id="edge44" class="edge">
+<title>Deposito-&gt;5</title>
+<path fill="none" stroke="#f6b80e" d="M58.2865,-663.8127C66.9583,-698.8262 84.1899,-743.7595 117.8058,-768.3299 139.1778,-783.951 170.0647,-785.2003 192.3538,-783.4663"/>
+<polygon fill="#f6b80e" stroke="#f6b80e" points="192.9339,-786.9253 202.5256,-782.4254 192.2212,-779.9617 192.9339,-786.9253"/>
+<text text-anchor="middle" x="141.9131" y="-788.5299" font-family="Times,serif" font-size="14.00" fill="#000000">v4 p1</text>
+</g>
+<!-- 11&#45;&gt;12 -->
+<g id="edge2" class="edge">
+<title>11-&gt;12</title>
+<path fill="none" stroke="#ff0000" d="M239.531,-1213.2048C249.7367,-1208.8082 262.6478,-1203.9699 274.7308,-1201.5299 307.057,-1195.002 344.9333,-1194.6634 370.8693,-1195.513"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="370.73,-1199.0101 380.8637,-1195.9188 371.014,-1192.0159 370.73,-1199.0101"/>
+<text text-anchor="middle" x="311.086" y="-1206.5299" font-family="Times,serif" font-size="14.00" fill="#000000">v1 p1</text>
+</g>
+<!-- 14 -->
+<g id="node8" class="node">
+<title>14</title>
+<ellipse fill="none" stroke="#ff0000" cx="843.2543" cy="-325.3299" rx="20.8887" ry="20.8887"/>
+<text text-anchor="middle" x="843.2543" y="-321.1299" font-family="Times,serif" font-size="14.00" fill="#000000">14</text>
+</g>
+<!-- 11&#45;&gt;14 -->
+<g id="edge11" class="edge">
+<title>11-&gt;14</title>
+<path fill="none" stroke="#ff0000" d="M237.9509,-1210.8991C248.3389,-1204.5055 261.9277,-1196.7555 274.7308,-1191.3299 507.0618,-1092.8739 665.6864,-1198.0078 804.5608,-987.3299 820.1031,-963.7517 820.1775,-507.4691 822.5608,-479.3299 826.1859,-436.5295 833.307,-387.3949 838.1727,-356.3633"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="841.6778,-356.6074 839.7904,-346.182 834.7645,-355.5089 841.6778,-356.6074"/>
+<text text-anchor="middle" x="567.5555" y="-1139.5299" font-family="Times,serif" font-size="14.00" fill="#000000">v1 p2</text>
+</g>
+<!-- 12&#45;&gt;11 -->
+<g id="edge10" class="edge">
+<title>12-&gt;11</title>
+<path fill="none" stroke="#ff0000" d="M383.1512,-1206.3334C372.8723,-1210.8319 359.7354,-1215.8368 347.4412,-1218.3299 315.122,-1224.8839 277.2445,-1225.15 251.3064,-1224.2355"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="251.4528,-1220.7386 241.311,-1223.8036 251.1505,-1227.7321 251.4528,-1220.7386"/>
+<text text-anchor="middle" x="311.086" y="-1229.5299" font-family="Times,serif" font-size="14.00" fill="#000000">v1 p2</text>
+</g>
+<!-- 10 -->
+<g id="node4" class="node">
+<title>10</title>
+<ellipse fill="none" stroke="#ff0000" cx="843.2543" cy="-1109.3299" rx="20.8887" ry="20.8887"/>
+<text text-anchor="middle" x="843.2543" y="-1105.1299" font-family="Times,serif" font-size="14.00" fill="#000000">10</text>
+</g>
+<!-- 12&#45;&gt;10 -->
+<g id="edge3" class="edge">
+<title>12-&gt;10</title>
+<path fill="none" stroke="#ff0000" d="M422.5936,-1198.4879C484.0458,-1201.0943 668.9718,-1203.0321 804.5608,-1142.3299 810.5894,-1139.631 816.3989,-1135.6912 821.6026,-1131.4664"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="824.0498,-1133.9746 829.2255,-1124.73 819.4144,-1128.7292 824.0498,-1133.9746"/>
+<text text-anchor="middle" x="642.6041" y="-1196.5299" font-family="Times,serif" font-size="14.00" fill="#000000">v1 p1</text>
+</g>
+<!-- 10&#45;&gt;Deposito -->
+<g id="edge4" class="edge">
+<title>10-&gt;Deposito</title>
+<path fill="none" stroke="#ff0000" d="M822.4185,-1108.6502C794.0424,-1107.7171 741.6566,-1105.9682 696.9593,-1104.3299 606.083,-1100.999 583.4441,-1096.3299 492.5068,-1096.3299 220.3756,-1096.3299 220.3756,-1096.3299 220.3756,-1096.3299 173.3473,-1096.3299 149.3488,-1105.2113 117.8058,-1070.3299 91.6198,-1041.3724 65.906,-791.6746 55.1555,-674.5333"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="58.6161,-673.9402 54.2234,-664.2989 51.6449,-674.5752 58.6161,-673.9402"/>
+<text text-anchor="middle" x="492.5068" y="-1100.5299" font-family="Times,serif" font-size="14.00" fill="#000000">v1 p1</text>
+</g>
+<!-- 10&#45;&gt;Deposito -->
+<g id="edge27" class="edge">
+<title>10-&gt;Deposito</title>
+<path fill="none" stroke="#0000ff" d="M822.7107,-1105.5692C772.6094,-1096.48 640.0958,-1072.9341 528.862,-1057.5299 346.758,-1032.3113 251.4834,-1137.5367 117.8058,-1011.3299 70.111,-966.3006 55.8539,-774.0524 51.6403,-674.5493"/>
+<polygon fill="#0000ff" stroke="#0000ff" points="55.129,-674.1955 51.2296,-664.3443 48.1346,-674.477 55.129,-674.1955"/>
+<text text-anchor="middle" x="492.5068" y="-1062.5299" font-family="Times,serif" font-size="14.00" fill="#000000">v2 p2</text>
+</g>
+<!-- 16 -->
+<g id="node6" class="node">
+<title>16</title>
+<ellipse fill="none" stroke="#ff0000" cx="567.5555" cy="-748.3299" rx="20.8887" ry="20.8887"/>
+<text text-anchor="middle" x="567.5555" y="-744.1299" font-family="Times,serif" font-size="14.00" fill="#000000">16</text>
+</g>
+<!-- 3&#45;&gt;16 -->
+<g id="edge6" class="edge">
+<title>3-&gt;16</title>
+<path fill="none" stroke="#ff0000" d="M419.8511,-735.8548C447.9106,-738.2247 502.3256,-742.8206 536.6988,-745.7237"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="536.4124,-749.2119 546.6715,-746.566 537.0016,-742.2368 536.4124,-749.2119"/>
+<text text-anchor="middle" x="492.5068" y="-749.5299" font-family="Times,serif" font-size="14.00" fill="#000000">v1 p1 2 ciclo</text>
+</g>
+<!-- 8 -->
+<g id="node12" class="node">
+<title>8</title>
+<ellipse fill="none" stroke="#0000ff" cx="567.5555" cy="-853.3299" rx="18" ry="18"/>
+<text text-anchor="middle" x="567.5555" y="-849.1299" font-family="Times,serif" font-size="14.00" fill="#000000">8</text>
+</g>
+<!-- 3&#45;&gt;8 -->
+<g id="edge39" class="edge">
+<title>3-&gt;8</title>
+<path fill="none" stroke="#0ef6ee" d="M416.8878,-744.3378C440.919,-760.3778 489.2163,-793.0405 528.862,-822.5299 534.2872,-826.5653 540.0362,-831.0325 545.3963,-835.2841"/>
+<polygon fill="#0ef6ee" stroke="#0ef6ee" points="543.4043,-838.1729 553.3968,-841.6944 547.7813,-832.7101 543.4043,-838.1729"/>
+<text text-anchor="middle" x="492.5068" y="-827.5299" font-family="Times,serif" font-size="14.00" fill="#000000">v3 p2</text>
+</g>
+<!-- 16&#45;&gt;Deposito -->
+<g id="edge48" class="edge">
+<title>16-&gt;Deposito</title>
+<path fill="none" stroke="#f6b80e" d="M547.9638,-741.6079C522.7364,-733.0714 477.4593,-718.1522 438.1516,-707.3299 318.1628,-674.2943 287.1052,-670.0901 166.0204,-641.3299 147.4158,-636.9109 127.1158,-632.1648 108.7674,-627.9033"/>
+<polygon fill="#f6b80e" stroke="#f6b80e" points="109.33,-624.441 98.7978,-625.5908 107.7483,-631.2599 109.33,-624.441"/>
+<text text-anchor="middle" x="311.086" y="-688.5299" font-family="Times,serif" font-size="14.00" fill="#000000">v4 p2</text>
+</g>
+<!-- 16&#45;&gt;2 -->
+<g id="edge7" class="edge">
+<title>16-&gt;2</title>
+<path fill="none" stroke="#000000" d="M581.1403,-732.2196C608.1307,-700.2119 668.5352,-628.5783 699.133,-592.2925"/>
+<polygon fill="#000000" stroke="#000000" points="702.1139,-594.1868 705.8847,-584.2857 696.7625,-589.6742 702.1139,-594.1868"/>
+<text text-anchor="middle" x="642.6041" y="-705.5299" font-family="Times,serif" font-size="14.00" fill="#000000">v1 p1 2 ciclo</text>
+</g>
+<!-- 2&#45;&gt;Deposito -->
+<g id="edge8" class="edge">
+<title>2-&gt;Deposito</title>
+<path fill="none" stroke="#ff0000" d="M699.5379,-571.5235C614.6135,-577.1195 253.9932,-600.8818 109.8193,-610.3818"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="109.5678,-606.8907 99.8196,-611.0407 110.0281,-613.8756 109.5678,-606.8907"/>
+<text text-anchor="middle" x="401.7964" y="-598.5299" font-family="Times,serif" font-size="14.00" fill="#000000">v1 2 ciclo</text>
+</g>
+<!-- 2&#45;&gt;1 -->
+<g id="edge42" class="edge">
+<title>2-&gt;1</title>
+<path fill="none" stroke="#0ef6ee" d="M733.8158,-562.094C755.2009,-551.1973 793.1151,-531.8782 818.2199,-519.0861"/>
+<polygon fill="#0ef6ee" stroke="#0ef6ee" points="819.8323,-522.1928 827.1532,-514.5341 816.6542,-515.9558 819.8323,-522.1928"/>
+<text text-anchor="middle" x="780.4535" y="-554.5299" font-family="Times,serif" font-size="14.00" fill="#000000">v3 p2 2c</text>
+</g>
+<!-- 14&#45;&gt;Deposito -->
+<g id="edge12" class="edge">
+<title>14-&gt;Deposito</title>
+<path fill="none" stroke="#ff0000" d="M822.4104,-326.1103C715.438,-330.5157 228.8207,-355.5228 117.8058,-449.3299 86.338,-475.9201 69.2395,-519.4152 60.0731,-555.0739"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="56.6449,-554.3602 57.6928,-564.9031 63.4482,-556.0078 56.6449,-554.3602"/>
+<text text-anchor="middle" x="492.5068" y="-360.5299" font-family="Times,serif" font-size="14.00" fill="#000000">v1 p2</text>
+</g>
+<!-- 14&#45;&gt;Deposito -->
+<g id="edge34" class="edge">
+<title>14-&gt;Deposito</title>
+<path fill="none" stroke="#0ef6ee" d="M822.3775,-324.053C816.608,-323.754 810.3438,-323.4793 804.5608,-323.3299 783.1393,-322.7766 777.7744,-323.18 756.3462,-323.3299 622.9166,-324.2633 588.6464,-311.7353 456.1516,-327.5299 332.9968,-342.2111 301.8266,-350.5441 184.0204,-389.3299 153.5043,-399.3768 139.605,-394.7297 117.8058,-418.3299 83.082,-455.9226 65.9852,-512.1756 57.6456,-554.7879"/>
+<polygon fill="#0ef6ee" stroke="#0ef6ee" points="54.1789,-554.2874 55.8041,-564.7568 61.0625,-555.559 54.1789,-554.2874"/>
+<text text-anchor="middle" x="492.5068" y="-332.5299" font-family="Times,serif" font-size="14.00" fill="#000000">v3 p1</text>
+</g>
+<!-- 18&#45;&gt;Deposito -->
+<g id="edge23" class="edge">
+<title>18-&gt;Deposito</title>
+<path fill="none" stroke="#0000ff" d="M548.0911,-182.1597C542.0066,-184.3932 535.2209,-186.6685 528.862,-188.3299 439.2816,-211.7342 184.0397,-191.6347 117.8058,-256.3299 76.3002,-296.8712 59.4123,-463.1153 53.173,-554.1093"/>
+<polygon fill="#0000ff" stroke="#0000ff" points="49.6678,-554.0734 52.4983,-564.2831 56.6525,-554.5367 49.6678,-554.0734"/>
+<text text-anchor="middle" x="311.086" y="-214.5299" font-family="Times,serif" font-size="14.00" fill="#000000">v2 p1 2c</text>
+</g>
+<!-- 17 -->
+<g id="node10" class="node">
+<title>17</title>
+<ellipse fill="none" stroke="#ff0000" cx="717.6528" cy="-257.3299" rx="20.8887" ry="20.8887"/>
+<text text-anchor="middle" x="717.6528" y="-253.1299" font-family="Times,serif" font-size="14.00" fill="#000000">17</text>
+</g>
+<!-- 18&#45;&gt;17 -->
+<g id="edge14" class="edge">
+<title>18-&gt;17</title>
+<path fill="none" stroke="#ff0000" d="M586.3575,-183.5144C608.7279,-194.5876 647.061,-214.0239 678.9593,-232.5299 683.0291,-234.891 687.277,-237.4803 691.4051,-240.0672"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="689.8221,-243.209 700.1349,-245.6375 693.5875,-237.3079 689.8221,-243.209"/>
+<text text-anchor="middle" x="642.6041" y="-237.5299" font-family="Times,serif" font-size="14.00" fill="#000000">v1 p2 2 ciclo</text>
+</g>
+<!-- 17&#45;&gt;Deposito -->
+<g id="edge15" class="edge">
+<title>17-&gt;Deposito</title>
+<path fill="none" stroke="#ff0000" d="M696.7049,-257.1434C595.7367,-256.4382 162.3301,-255.6931 117.8058,-294.3299 79.3571,-327.6945 61.459,-471.257 54.1841,-554.3158"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="50.6882,-554.12 53.3286,-564.3805 57.6631,-554.7129 50.6882,-554.12"/>
+<text text-anchor="middle" x="401.7964" y="-266.5299" font-family="Times,serif" font-size="14.00" fill="#000000">v1 p2 2 ciclo</text>
+</g>
+<!-- 17&#45;&gt;14 -->
+<g id="edge33" class="edge">
+<title>17-&gt;14</title>
+<path fill="none" stroke="#0ef6ee" d="M738.4597,-257.7055C757.066,-258.9215 784.4262,-262.9529 804.5608,-275.5299 813.754,-281.2724 821.6235,-290.0211 827.8183,-298.5921"/>
+<polygon fill="#0ef6ee" stroke="#0ef6ee" points="824.968,-300.6261 833.4417,-306.9859 830.7836,-296.7299 824.968,-300.6261"/>
+<text text-anchor="middle" x="780.4535" y="-280.5299" font-family="Times,serif" font-size="14.00" fill="#000000">v3 p1</text>
+</g>
+<!-- 9&#45;&gt;16 -->
+<g id="edge47" class="edge">
+<title>9-&gt;16</title>
+<path fill="none" stroke="#f6b80e" d="M328.4541,-834.5484C376.5998,-818.5045 509.4977,-774.0977 528.862,-766.3299 532.3689,-764.9231 536.0142,-763.3625 539.6036,-761.7651"/>
+<polygon fill="#f6b80e" stroke="#f6b80e" points="541.2084,-764.8798 548.8407,-757.5314 538.2917,-758.5163 541.2084,-764.8798"/>
+<text text-anchor="middle" x="401.7964" y="-825.5299" font-family="Times,serif" font-size="14.00" fill="#000000">v4 p2</text>
+</g>
+<!-- 9&#45;&gt;8 -->
+<g id="edge17" class="edge">
+<title>9-&gt;8</title>
+<path fill="none" stroke="#0000ff" d="M329.1204,-841.244C373.1753,-843.4771 486.5261,-849.2227 539.4954,-851.9076"/>
+<polygon fill="#0000ff" stroke="#0000ff" points="539.3766,-855.406 549.541,-852.4168 539.731,-848.4149 539.3766,-855.406"/>
+<text text-anchor="middle" x="401.7964" y="-851.5299" font-family="Times,serif" font-size="14.00" fill="#000000">v2 p1</text>
+</g>
+<!-- 8&#45;&gt;Deposito -->
+<g id="edge40" class="edge">
+<title>8-&gt;Deposito</title>
+<path fill="none" stroke="#0ef6ee" d="M549.9848,-859.0992C475.474,-883.0814 186.2947,-971.1294 117.8058,-916.3299 80.7098,-886.6486 62.4646,-753.9057 54.7266,-674.623"/>
+<polygon fill="#0ef6ee" stroke="#0ef6ee" points="58.1745,-673.907 53.7471,-664.2816 51.2057,-674.5671 58.1745,-673.907"/>
+<text text-anchor="middle" x="311.086" y="-931.5299" font-family="Times,serif" font-size="14.00" fill="#000000">v3 p2</text>
+</g>
+<!-- 13 -->
+<g id="node13" class="node">
+<title>13</title>
+<ellipse fill="none" stroke="#0000ff" cx="717.6528" cy="-855.3299" rx="20.8887" ry="20.8887"/>
+<text text-anchor="middle" x="717.6528" y="-851.1299" font-family="Times,serif" font-size="14.00" fill="#000000">13</text>
+</g>
+<!-- 8&#45;&gt;13 -->
+<g id="edge18" class="edge">
+<title>8-&gt;13</title>
+<path fill="none" stroke="#0000ff" d="M585.6607,-853.5711C610.6304,-853.9039 656.0018,-854.5084 686.485,-854.9146"/>
+<polygon fill="#0000ff" stroke="#0000ff" points="686.5427,-858.4156 696.5885,-855.0492 686.636,-851.4162 686.5427,-858.4156"/>
+<text text-anchor="middle" x="642.6041" y="-859.5299" font-family="Times,serif" font-size="14.00" fill="#000000">v2 p1</text>
+</g>
+<!-- 13&#45;&gt;10 -->
+<g id="edge26" class="edge">
+<title>13-&gt;10</title>
+<path fill="none" stroke="#0000ff" d="M726.8885,-874.0071C748.7551,-918.2272 803.7843,-1029.511 829.5492,-1081.6146"/>
+<polygon fill="#0000ff" stroke="#0000ff" points="826.4349,-1083.2128 834.005,-1090.6253 832.7097,-1080.1099 826.4349,-1083.2128"/>
+<text text-anchor="middle" x="780.4535" y="-1031.5299" font-family="Times,serif" font-size="14.00" fill="#000000">v2 p2</text>
+</g>
+<!-- 13&#45;&gt;15 -->
+<g id="edge19" class="edge">
+<title>13-&gt;15</title>
+<path fill="none" stroke="#0000ff" d="M737.9818,-851.435C757.0304,-848.9744 785.3698,-848.5049 804.5608,-862.5299 824.7281,-877.2683 834.4254,-904.4574 839.0639,-925.7827"/>
+<polygon fill="#0000ff" stroke="#0000ff" points="835.6442,-926.5345 840.9584,-935.7002 842.5199,-925.2211 835.6442,-926.5345"/>
+<text text-anchor="middle" x="780.4535" y="-867.5299" font-family="Times,serif" font-size="14.00" fill="#000000">v2 p1</text>
+</g>
+<!-- 15&#45;&gt;Deposito -->
+<g id="edge20" class="edge">
+<title>15-&gt;Deposito</title>
+<path fill="none" stroke="#0000ff" d="M829.8799,-972.3677C823.0928,-979.2703 814.2407,-986.6008 804.5608,-990.3299 768.9581,-1004.0454 146.9997,-1016.8938 117.8058,-992.3299 70.3654,-952.4133 56.0168,-771.0053 51.7166,-674.7471"/>
+<polygon fill="#0000ff" stroke="#0000ff" points="55.2059,-674.4179 51.2854,-664.5751 48.2122,-674.7144 55.2059,-674.4179"/>
+<text text-anchor="middle" x="492.5068" y="-1010.5299" font-family="Times,serif" font-size="14.00" fill="#000000">v2 p1</text>
+</g>
+<!-- 15&#45;&gt;Deposito -->
+<g id="edge52" class="edge">
+<title>15-&gt;Deposito</title>
+<path fill="none" stroke="#c80ef6" d="M822.9625,-961.5847C798.2605,-967.5103 755.1897,-976.3299 717.6528,-976.3299 492.5068,-976.3299 492.5068,-976.3299 492.5068,-976.3299 -40.1547,-976.3299 133.9621,-953.9368 117.8058,-939.3299 79.3768,-904.5862 61.4364,-758.3999 54.1586,-674.4014"/>
+<polygon fill="#c80ef6" stroke="#c80ef6" points="57.6288,-673.8994 53.3029,-664.228 50.6534,-674.4862 57.6288,-673.8994"/>
+<text text-anchor="middle" x="492.5068" y="-980.5299" font-family="Times,serif" font-size="14.00" fill="#000000">v5 p2</text>
+</g>
+<!-- 4&#45;&gt;Deposito -->
+<g id="edge30" class="edge">
+<title>4-&gt;Deposito</title>
+<path fill="none" stroke="#0000ff" d="M383.8224,-141.4417C345.9479,-136.032 255.5382,-126.6963 184.0204,-147.5299 150.833,-157.1976 136.9891,-159.5746 117.8058,-188.3299 78.5278,-247.2069 60.2344,-451.3611 53.3499,-554.1772"/>
+<polygon fill="#0000ff" stroke="#0000ff" points="49.8413,-554.1945 52.6805,-564.4018 56.8264,-554.6519 49.8413,-554.1945"/>
+<text text-anchor="middle" x="220.3756" y="-152.5299" font-family="Times,serif" font-size="14.00" fill="#000000">v2 p2 2c</text>
+</g>
+<!-- 4&#45;&gt;18 -->
+<g id="edge22" class="edge">
+<title>4-&gt;18</title>
+<path fill="none" stroke="#0000ff" d="M419.5355,-147.5404C447.6159,-152.6226 502.6467,-162.5823 537.1235,-168.8221"/>
+<polygon fill="#0000ff" stroke="#0000ff" points="536.6472,-172.2927 547.1107,-170.6297 537.8939,-165.4046 536.6472,-172.2927"/>
+<text text-anchor="middle" x="492.5068" y="-171.5299" font-family="Times,serif" font-size="14.00" fill="#000000">v2 p1 2c</text>
+</g>
+<!-- 6&#45;&gt;17 -->
+<g id="edge32" class="edge">
+<title>6-&gt;17</title>
+<path fill="none" stroke="#0ef6ee" d="M505.6824,-473.3829C512.608,-466.5523 521.2228,-458.016 528.862,-450.3299 589.6852,-389.1336 660.6504,-316.1555 695.7242,-279.9801"/>
+<polygon fill="#0ef6ee" stroke="#0ef6ee" points="698.6003,-282.0417 703.0463,-272.4248 693.5735,-277.1701 698.6003,-282.0417"/>
+<text text-anchor="middle" x="567.5555" y="-436.5299" font-family="Times,serif" font-size="14.00" fill="#000000">v3 p1</text>
+</g>
+<!-- 6&#45;&gt;13 -->
+<g id="edge25" class="edge">
+<title>6-&gt;13</title>
+<path fill="none" stroke="#0000ff" d="M508.7166,-494.7687C545.675,-514.9313 636.2729,-569.7584 678.9593,-643.3299 696.5761,-673.693 709.1566,-773.4533 714.6185,-824.5576"/>
+<polygon fill="#0000ff" stroke="#0000ff" points="711.1559,-825.0992 715.6752,-834.6818 718.1181,-824.3724 711.1559,-825.0992"/>
+<text text-anchor="middle" x="567.5555" y="-549.5299" font-family="Times,serif" font-size="14.00" fill="#000000">v2 p2</text>
+</g>
+<!-- 7&#45;&gt;Deposito -->
+<g id="edge50" class="edge">
+<title>7-&gt;Deposito</title>
+<path fill="none" stroke="#c80ef6" d="M202.8923,-75.5974C180.1155,-70.5988 140.5278,-66.0914 117.8058,-87.5299 84.2967,-119.1463 61.7256,-422.415 53.435,-553.9569"/>
+<polygon fill="#c80ef6" stroke="#c80ef6" points="49.9219,-554.0588 52.7929,-564.2573 56.9083,-554.4944 49.9219,-554.0588"/>
+<text text-anchor="middle" x="141.9131" y="-92.5299" font-family="Times,serif" font-size="14.00" fill="#000000">v5 p1</text>
+</g>
+<!-- 7&#45;&gt;4 -->
+<g id="edge29" class="edge">
+<title>7-&gt;4</title>
+<path fill="none" stroke="#0000ff" d="M238.3902,-81.0246C263.7241,-82.5679 310.8693,-87.5369 347.4412,-103.5299 359.4818,-108.7953 371.3338,-117.2016 380.8823,-125.0193"/>
+<polygon fill="#0000ff" stroke="#0000ff" points="378.753,-127.8037 388.6273,-131.6441 383.3031,-122.4842 378.753,-127.8037"/>
+<text text-anchor="middle" x="311.086" y="-108.5299" font-family="Times,serif" font-size="14.00" fill="#000000">v2 p2 2c</text>
+</g>
+<!-- 1&#45;&gt;Deposito -->
+<g id="edge36" class="edge">
+<title>1-&gt;Deposito</title>
+<path fill="none" stroke="#0ef6ee" d="M826.498,-498.7973C819.7612,-495.9284 811.8709,-492.7664 804.5608,-490.3299 684.5435,-450.3265 654.3728,-435.3883 528.862,-419.5299 376.1629,-400.2362 335.7266,-425.3585 184.0204,-451.3299 154.2787,-456.4215 141.2361,-447.3163 117.8058,-466.3299 90.2732,-488.6725 73.4197,-524.6486 63.39,-555.5356"/>
+<polygon fill="#0ef6ee" stroke="#0ef6ee" points="59.9625,-554.7742 60.3685,-565.3613 66.6533,-556.8318 59.9625,-554.7742"/>
+<text text-anchor="middle" x="492.5068" y="-424.5299" font-family="Times,serif" font-size="14.00" fill="#000000">v3 p1 2c</text>
+</g>
+<!-- 1&#45;&gt;Deposito -->
+<g id="edge43" class="edge">
+<title>1-&gt;Deposito</title>
+<path fill="none" stroke="#0ef6ee" d="M835.3464,-522.7611C828.3108,-536.4999 817.1985,-556.2187 804.5608,-571.3299 757.1435,-628.0279 748.2019,-654.4741 678.9593,-680.3299 575.8808,-718.8204 291.7025,-688.9408 184.0204,-666.3299 156.9424,-660.6441 128.1817,-650.14 104.2666,-640.0532"/>
+<polygon fill="#0ef6ee" stroke="#0ef6ee" points="105.5834,-636.8095 95.0143,-636.0706 102.8157,-643.2392 105.5834,-636.8095"/>
+<text text-anchor="middle" x="492.5068" y="-703.5299" font-family="Times,serif" font-size="14.00" fill="#000000">v3 p2 2c</text>
+</g>
+<!-- 5&#45;&gt;Deposito -->
+<g id="edge45" class="edge">
+<title>5-&gt;Deposito</title>
+<path fill="none" stroke="#f6b80e" d="M205.0182,-769.5083C194.3143,-762.8725 179.5785,-754.1489 166.0204,-747.5299 145.2932,-737.411 135.3535,-743.2995 117.8058,-728.3299 99.2569,-712.5062 84.4391,-690.2811 73.4377,-669.6524"/>
+<polygon fill="#f6b80e" stroke="#f6b80e" points="76.4846,-667.9237 68.8047,-660.6251 70.2569,-671.12 76.4846,-667.9237"/>
+<text text-anchor="middle" x="141.9131" y="-752.5299" font-family="Times,serif" font-size="14.00" fill="#000000">v4 p1</text>
+</g>
+<!-- 5&#45;&gt;3 -->
+<g id="edge38" class="edge">
+<title>5-&gt;3</title>
+<path fill="none" stroke="#0ef6ee" d="M238.1013,-774.9332C269.8857,-767.0493 336.7652,-750.4604 374.461,-741.1102"/>
+<polygon fill="#0ef6ee" stroke="#0ef6ee" points="375.4026,-744.4828 384.2658,-738.6782 373.7173,-737.6887 375.4026,-744.4828"/>
+<text text-anchor="middle" x="311.086" y="-769.5299" font-family="Times,serif" font-size="14.00" fill="#000000">v3 p2</text>
+</g>
+</g>
+</svg>

@@ -2,4 +2,4 @@ module routng
 
 go 1.20
 
-require github.com/awalterschulze/gographviz v2.0.3+incompatible
+require gonum.org/v1/gonum v0.14.0
